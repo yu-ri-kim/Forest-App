@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/yurikim/Documents/forestApp/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_booksearch.xml",
+        "source": "/Users/yurikim/Documents/forestApp/app/src/main/res/layout/fragment_booksearch.xml"
+    },
+    {
+        "merged": "/Users/yurikim/Documents/forestApp/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_signup.xml",
+        "source": "/Users/yurikim/Documents/forestApp/app/src/main/res/layout/activity_signup.xml"
+    },
+    {
+        "merged": "/Users/yurikim/Documents/forestApp/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_list.xml",
+        "source": "/Users/yurikim/Documents/forestApp/app/src/main/res/layout/activity_list.xml"
+    },
+    {
+        "merged": "/Users/yurikim/Documents/forestApp/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/layout.xml",
+        "source": "/Users/yurikim/Documents/forestApp/app/src/main/res/layout/layout.xml"
+    },
+    {
+        "merged": "/Users/yurikim/Documents/forestApp/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_login.xml",
+        "source": "/Users/yurikim/Documents/forestApp/app/src/main/res/layout/activity_login.xml"
+    },
+    {
+        "merged": "/Users/yurikim/Documents/forestApp/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/booksearch_item.xml",
+        "source": "/Users/yurikim/Documents/forestApp/app/src/main/res/layout/booksearch_item.xml"
+    }
+]
