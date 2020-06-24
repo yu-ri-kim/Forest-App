@@ -13,18 +13,54 @@ public class FragmentBooksearchBindingImpl extends FragmentBooksearchBinding  {
     private static final android.util.SparseIntArray sViewsWithIds;
     static {
         sIncludes = null;
-        sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.search_tab, 3);
+        sViewsWithIds = null;
     }
     // views
     @NonNull
     private final android.widget.RelativeLayout mboundView0;
     @NonNull
-    private final android.widget.ListView mboundView2;
+    private final android.widget.ListView mboundView3;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
+    private androidx.databinding.InverseBindingListener searchTabandroidSelectedItemPositionAttrChanged = new androidx.databinding.InverseBindingListener() {
+        @Override
+        public void onChange() {
+            // Inverse of model.selectedItemPosition.get()
+            //         is model.selectedItemPosition.set((java.lang.Integer) callbackArg_0)
+            int callbackArg_0 = searchTab.getSelectedItemPosition();
+            // localize variables for thread safety
+            // model
+            com.example.forestapp.ui.bookSearch.BookSearchViewModel model = mModel;
+            // model != null
+            boolean modelJavaLangObjectNull = false;
+            // model.selectedItemPosition != null
+            boolean modelSelectedItemPositionJavaLangObjectNull = false;
+            // model.selectedItemPosition
+            androidx.databinding.ObservableField<java.lang.Integer> modelSelectedItemPosition = null;
+            // model.selectedItemPosition.get()
+            java.lang.Integer modelSelectedItemPositionGet = null;
+
+
+
+            modelJavaLangObjectNull = (model) != (null);
+            if (modelJavaLangObjectNull) {
+
+
+                modelSelectedItemPosition = model.selectedItemPosition;
+
+                modelSelectedItemPositionJavaLangObjectNull = (modelSelectedItemPosition) != (null);
+                if (modelSelectedItemPositionJavaLangObjectNull) {
+
+
+
+
+                    modelSelectedItemPosition.set(((java.lang.Integer) (callbackArg_0)));
+                }
+            }
+        }
+    };
     private androidx.databinding.InverseBindingListener searchViewandroidTextAttrChanged = new androidx.databinding.InverseBindingListener() {
         @Override
         public void onChange() {
@@ -67,14 +103,15 @@ public class FragmentBooksearchBindingImpl extends FragmentBooksearchBinding  {
         this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
     }
     private FragmentBooksearchBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 2
-            , (android.widget.Spinner) bindings[3]
+        super(bindingComponent, root, 3
+            , (android.widget.Spinner) bindings[2]
             , (android.widget.EditText) bindings[1]
             );
         this.mboundView0 = (android.widget.RelativeLayout) bindings[0];
         this.mboundView0.setTag(null);
-        this.mboundView2 = (android.widget.ListView) bindings[2];
-        this.mboundView2.setTag(null);
+        this.mboundView3 = (android.widget.ListView) bindings[3];
+        this.mboundView3.setTag(null);
+        this.searchTab.setTag(null);
         this.searchView.setTag(null);
         setRootTag(root);
         // listeners
@@ -84,7 +121,7 @@ public class FragmentBooksearchBindingImpl extends FragmentBooksearchBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x8L;
+                mDirtyFlags = 0x10L;
         }
         requestRebind();
     }
@@ -114,7 +151,7 @@ public class FragmentBooksearchBindingImpl extends FragmentBooksearchBinding  {
     public void setModel(@Nullable com.example.forestapp.ui.bookSearch.BookSearchViewModel Model) {
         this.mModel = Model;
         synchronized(this) {
-            mDirtyFlags |= 0x4L;
+            mDirtyFlags |= 0x8L;
         }
         notifyPropertyChanged(BR.model);
         super.requestRebind();
@@ -124,13 +161,15 @@ public class FragmentBooksearchBindingImpl extends FragmentBooksearchBinding  {
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
         switch (localFieldId) {
             case 0 :
-                return onChangeModelSearch((androidx.databinding.ObservableField<java.lang.String>) object, fieldId);
+                return onChangeModelSelectedItemPosition((androidx.databinding.ObservableField<java.lang.Integer>) object, fieldId);
             case 1 :
+                return onChangeModelSearch((androidx.databinding.ObservableField<java.lang.String>) object, fieldId);
+            case 2 :
                 return onChangeModelPlants((androidx.databinding.ObservableArrayList<com.example.forestapp.ui.bookSearch.BkViewModel>) object, fieldId);
         }
         return false;
     }
-    private boolean onChangeModelSearch(androidx.databinding.ObservableField<java.lang.String> ModelSearch, int fieldId) {
+    private boolean onChangeModelSelectedItemPosition(androidx.databinding.ObservableField<java.lang.Integer> ModelSelectedItemPosition, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
                     mDirtyFlags |= 0x1L;
@@ -139,10 +178,19 @@ public class FragmentBooksearchBindingImpl extends FragmentBooksearchBinding  {
         }
         return false;
     }
-    private boolean onChangeModelPlants(androidx.databinding.ObservableArrayList<com.example.forestapp.ui.bookSearch.BkViewModel> ModelPlants, int fieldId) {
+    private boolean onChangeModelSearch(androidx.databinding.ObservableField<java.lang.String> ModelSearch, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
                     mDirtyFlags |= 0x2L;
+            }
+            return true;
+        }
+        return false;
+    }
+    private boolean onChangeModelPlants(androidx.databinding.ObservableArrayList<com.example.forestapp.ui.bookSearch.BkViewModel> ModelPlants, int fieldId) {
+        if (fieldId == BR._all) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x4L;
             }
             return true;
         }
@@ -157,20 +205,41 @@ public class FragmentBooksearchBindingImpl extends FragmentBooksearchBinding  {
             mDirtyFlags = 0;
         }
         com.example.forestapp.ui.bookSearch.BookSearchViewModel model = mModel;
+        androidx.databinding.ObservableField<java.lang.Integer> modelSelectedItemPosition = null;
+        java.lang.String modelSearchGet = null;
         androidx.databinding.ObservableField<java.lang.String> modelSearch = null;
         androidx.databinding.ObservableArrayList<com.example.forestapp.ui.bookSearch.BkViewModel> modelPlants = null;
-        java.lang.String modelSearchGet = null;
+        int androidxDatabindingViewDataBindingSafeUnboxModelSelectedItemPositionGet = 0;
+        java.lang.Integer modelSelectedItemPositionGet = null;
 
-        if ((dirtyFlags & 0xfL) != 0) {
+        if ((dirtyFlags & 0x1fL) != 0) {
 
 
-            if ((dirtyFlags & 0xdL) != 0) {
+            if ((dirtyFlags & 0x19L) != 0) {
+
+                    if (model != null) {
+                        // read model.selectedItemPosition
+                        modelSelectedItemPosition = model.selectedItemPosition;
+                    }
+                    updateRegistration(0, modelSelectedItemPosition);
+
+
+                    if (modelSelectedItemPosition != null) {
+                        // read model.selectedItemPosition.get()
+                        modelSelectedItemPositionGet = modelSelectedItemPosition.get();
+                    }
+
+
+                    // read androidx.databinding.ViewDataBinding.safeUnbox(model.selectedItemPosition.get())
+                    androidxDatabindingViewDataBindingSafeUnboxModelSelectedItemPositionGet = androidx.databinding.ViewDataBinding.safeUnbox(modelSelectedItemPositionGet);
+            }
+            if ((dirtyFlags & 0x1aL) != 0) {
 
                     if (model != null) {
                         // read model.search
                         modelSearch = model.search;
                     }
-                    updateRegistration(0, modelSearch);
+                    updateRegistration(1, modelSearch);
 
 
                     if (modelSearch != null) {
@@ -178,30 +247,36 @@ public class FragmentBooksearchBindingImpl extends FragmentBooksearchBinding  {
                         modelSearchGet = modelSearch.get();
                     }
             }
-            if ((dirtyFlags & 0xeL) != 0) {
+            if ((dirtyFlags & 0x1cL) != 0) {
 
                     if (model != null) {
                         // read model.plants
                         modelPlants = model.plants;
                     }
-                    updateRegistration(1, modelPlants);
+                    updateRegistration(2, modelPlants);
             }
         }
         // batch finished
-        if ((dirtyFlags & 0xeL) != 0) {
+        if ((dirtyFlags & 0x1cL) != 0) {
             // api target 1
 
-            com.example.forestapp.ui.bookSearch.BookSearchFragment.setUserList(this.mboundView2, modelPlants);
+            com.example.forestapp.ui.bookSearch.BookSearchFragment.setUserList(this.mboundView3, modelPlants);
         }
-        if ((dirtyFlags & 0xdL) != 0) {
+        if ((dirtyFlags & 0x19L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.AdapterViewBindingAdapter.setSelectedItemPosition(this.searchTab, androidxDatabindingViewDataBindingSafeUnboxModelSelectedItemPositionGet);
+        }
+        if ((dirtyFlags & 0x10L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.AdapterViewBindingAdapter.setOnItemSelectedListener(this.searchTab, (androidx.databinding.adapters.AdapterViewBindingAdapter.OnItemSelected)null, (androidx.databinding.adapters.AdapterViewBindingAdapter.OnNothingSelected)null, searchTabandroidSelectedItemPositionAttrChanged);
+            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.searchView, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, searchViewandroidTextAttrChanged);
+        }
+        if ((dirtyFlags & 0x1aL) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.searchView, modelSearchGet);
-        }
-        if ((dirtyFlags & 0x8L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.searchView, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, searchViewandroidTextAttrChanged);
         }
     }
     // Listener Stub Implementations
@@ -209,10 +284,11 @@ public class FragmentBooksearchBindingImpl extends FragmentBooksearchBinding  {
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): model.search
-        flag 1 (0x2L): model.plants
-        flag 2 (0x3L): model
-        flag 3 (0x4L): null
+        flag 0 (0x1L): model.selectedItemPosition
+        flag 1 (0x2L): model.search
+        flag 2 (0x3L): model.plants
+        flag 3 (0x4L): model
+        flag 4 (0x5L): null
     flag mapping end*/
     //end
 }

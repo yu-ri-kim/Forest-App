@@ -63,7 +63,7 @@ public class BookSearchViewModel extends baseViewModel{
 
         for(BkViewModel pp : initplants){
             if(pp.name.get().contains(cmd)){ // 이름에 단어가 포함되어 있다면
-                Log.d("Test",pp.name.get());
+                //Log.d("Test",pp.name.get());
                 plants.add(new BkViewModel(pp.img.get(), pp.name.get(),pp.data.get()));
             }
 //            else{
@@ -83,7 +83,7 @@ public class BookSearchViewModel extends baseViewModel{
             @Override
             public void onSuccess(int code, Object receivedData) {
                 List<PlantJson> data = (List<PlantJson>)receivedData;
-                Log.d("Test",data.get(0).toString());
+                //Log.d("Test",data.get(0).toString());
 
                 for(PlantJson d: data){ // 모든 도감 데이터 집어 넣음
                     String img=d.getFsImg1();

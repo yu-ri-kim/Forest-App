@@ -24,15 +24,15 @@
         <activity android:name="com.example.forestapp.SplashActivity" >
         </activity>
         <activity android:name="com.example.forestapp.LoginActivity" >
-        </activity>
-        <activity
-            android:name="com.example.forestapp.BookMainActivity"
-            android:label="@string/title_activity_book_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.forestapp.BookMainActivity"
+            android:label="@string/title_activity_book_main" >
         </activity>
         <activity android:name="com.example.forestapp.ServerActivity" />
         <activity android:name="com.example.forestapp.ListActivity" />

@@ -16,6 +16,13 @@
         android:orientation="vertical"
         tools:context=".ui.book.BookFragment">
 
+        <Spinner
+            android:id="@+id/search_tab"
+            android:layout_width="99dp"
+            android:layout_height="49dp"
+            android:entries="@array/menu_book"
+            android:onItemSelected="@{model::SpinnerItemSelected}" />
+
         <GridView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -1,34 +1,34 @@
 [
     {
-        "merged": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_booksearch.xml",
-        "source": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\src\\main\\res\\layout\\fragment_booksearch.xml"
+        "merged": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_book.xml",
+        "source": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/src/main/res/layout/fragment_book.xml"
     },
     {
-        "merged": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
-        "source": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\src\\main\\res\\layout\\activity_login.xml"
+        "merged": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_booksearch.xml",
+        "source": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/src/main/res/layout/fragment_booksearch.xml"
     },
     {
-        "merged": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\booksearch_item.xml",
-        "source": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\src\\main\\res\\layout\\booksearch_item.xml"
+        "merged": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_login.xml",
+        "source": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/src/main/res/layout/activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_hurbsearch.xml",
-        "source": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\src\\main\\res\\layout\\fragment_hurbsearch.xml"
+        "merged": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/book_item.xml",
+        "source": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/src/main/res/layout/book_item.xml"
     },
     {
-        "merged": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_signup.xml",
-        "source": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\src\\main\\res\\layout\\activity_signup.xml"
+        "merged": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_mybook.xml",
+        "source": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/src/main/res/layout/fragment_mybook.xml"
     },
     {
-        "merged": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_mybook.xml",
-        "source": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\src\\main\\res\\layout\\fragment_mybook.xml"
+        "merged": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_signup.xml",
+        "source": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/src/main/res/layout/activity_signup.xml"
     },
     {
-        "merged": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\book_item.xml",
-        "source": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\src\\main\\res\\layout\\book_item.xml"
+        "merged": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_hurbsearch.xml",
+        "source": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/src/main/res/layout/fragment_hurbsearch.xml"
     },
     {
-        "merged": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_book.xml",
-        "source": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\src\\main\\res\\layout\\fragment_book.xml"
+        "merged": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/booksearch_item.xml",
+        "source": "/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/src/main/res/layout/booksearch_item.xml"
     }
 ]

@@ -112,5 +112,23 @@ public class RequestForServer { // 서버랑 통신하기 위한 객체 -> 싱�
             });
         }
 
+        else if(op.equals("AllHerb")){
+            retrofitAPI.getHerbInfo().enqueue(new Callback<List<HerbJson>>() {
+                @Override
+                public void onResponse(Call<List<HerbJson>> call, Response<List<HerbJson>> response) {
+                    if(response.isSuccessful()){
+                        callback.onSuccess(response.code(),response.body());
+                    }else{
+                        callback.onFailure(response.code());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<List<HerbJson>> call, Throwable t) {
+                    callback.onError(t);
+                }
+            });
+        }
+
     }
 }

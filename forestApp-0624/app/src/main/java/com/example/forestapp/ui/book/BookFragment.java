@@ -40,7 +40,6 @@ public class BookFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
-
         FragmentBookBinding binding=DataBindingUtil.getBinding(getView());
         binding.setModel(model);
         model.onCreate();

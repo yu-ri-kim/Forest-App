@@ -17,8 +17,11 @@ public interface RetrofitInterface { // 서버에게 보낼 url들
     @GET("/PlantInfo/getAllPlants")
     Call<List<PlantJson>> getPlantInfo();
 
-    @GET("/PlantInfo/getPlants")
+    @GET("/PlantInfo/getAllPlantsInfo")
     Call<List<PlantJson>> getPlantInfo_detail();
+
+    @GET("/PlantInfo/getAllHerb")
+    Call<List<HerbJson>> getHerbInfo();
 
     @POST("/User/UserValid")
     Call<PostJsons> postLogin(@Body UserJson user);

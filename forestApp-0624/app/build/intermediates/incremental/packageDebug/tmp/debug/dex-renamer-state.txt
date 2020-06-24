@@ -1,4 +1,4 @@
-#Wed Jun 24 16:37:54 KST 2020
-base.0=C\:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Wed Jun 24 21:15:14 KST 2020
+base.0=/Users/hong-yugyeong/Documents/AppForest_YG/forestApp/forestApp-0624/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
