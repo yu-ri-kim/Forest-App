@@ -8,8 +8,12 @@ import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import com.example.forestapp.databinding.ActivityLoginBindingImpl;
 import com.example.forestapp.databinding.ActivitySignupBindingImpl;
+import com.example.forestapp.databinding.BookItemBindingImpl;
 import com.example.forestapp.databinding.BooksearchItemBindingImpl;
+import com.example.forestapp.databinding.FragmentBookBindingImpl;
 import com.example.forestapp.databinding.FragmentBooksearchBindingImpl;
+import com.example.forestapp.databinding.FragmentHurbsearchBindingImpl;
+import com.example.forestapp.databinding.FragmentMybookBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
 import java.lang.Object;
@@ -25,17 +29,29 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_ACTIVITYSIGNUP = 2;
 
-  private static final int LAYOUT_BOOKSEARCHITEM = 3;
+  private static final int LAYOUT_BOOKITEM = 3;
 
-  private static final int LAYOUT_FRAGMENTBOOKSEARCH = 4;
+  private static final int LAYOUT_BOOKSEARCHITEM = 4;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(4);
+  private static final int LAYOUT_FRAGMENTBOOK = 5;
+
+  private static final int LAYOUT_FRAGMENTBOOKSEARCH = 6;
+
+  private static final int LAYOUT_FRAGMENTHURBSEARCH = 7;
+
+  private static final int LAYOUT_FRAGMENTMYBOOK = 8;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(8);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.forestapp.R.layout.activity_login, LAYOUT_ACTIVITYLOGIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.forestapp.R.layout.activity_signup, LAYOUT_ACTIVITYSIGNUP);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.forestapp.R.layout.book_item, LAYOUT_BOOKITEM);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.forestapp.R.layout.booksearch_item, LAYOUT_BOOKSEARCHITEM);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.forestapp.R.layout.fragment_book, LAYOUT_FRAGMENTBOOK);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.forestapp.R.layout.fragment_booksearch, LAYOUT_FRAGMENTBOOKSEARCH);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.forestapp.R.layout.fragment_hurbsearch, LAYOUT_FRAGMENTHURBSEARCH);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.forestapp.R.layout.fragment_mybook, LAYOUT_FRAGMENTMYBOOK);
   }
 
   @Override
@@ -59,17 +75,41 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           }
           throw new IllegalArgumentException("The tag for activity_signup is invalid. Received: " + tag);
         }
+        case  LAYOUT_BOOKITEM: {
+          if ("layout/book_item_0".equals(tag)) {
+            return new BookItemBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for book_item is invalid. Received: " + tag);
+        }
         case  LAYOUT_BOOKSEARCHITEM: {
           if ("layout/booksearch_item_0".equals(tag)) {
             return new BooksearchItemBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for booksearch_item is invalid. Received: " + tag);
         }
+        case  LAYOUT_FRAGMENTBOOK: {
+          if ("layout/fragment_book_0".equals(tag)) {
+            return new FragmentBookBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_book is invalid. Received: " + tag);
+        }
         case  LAYOUT_FRAGMENTBOOKSEARCH: {
           if ("layout/fragment_booksearch_0".equals(tag)) {
             return new FragmentBooksearchBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for fragment_booksearch is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTHURBSEARCH: {
+          if ("layout/fragment_hurbsearch_0".equals(tag)) {
+            return new FragmentHurbsearchBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_hurbsearch is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTMYBOOK: {
+          if ("layout/fragment_mybook_0".equals(tag)) {
+            return new FragmentMybookBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_mybook is invalid. Received: " + tag);
         }
       }
     }
@@ -126,13 +166,17 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(4);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(8);
 
     static {
       sKeys.put("layout/activity_login_0", com.example.forestapp.R.layout.activity_login);
       sKeys.put("layout/activity_signup_0", com.example.forestapp.R.layout.activity_signup);
+      sKeys.put("layout/book_item_0", com.example.forestapp.R.layout.book_item);
       sKeys.put("layout/booksearch_item_0", com.example.forestapp.R.layout.booksearch_item);
+      sKeys.put("layout/fragment_book_0", com.example.forestapp.R.layout.fragment_book);
       sKeys.put("layout/fragment_booksearch_0", com.example.forestapp.R.layout.fragment_booksearch);
+      sKeys.put("layout/fragment_hurbsearch_0", com.example.forestapp.R.layout.fragment_hurbsearch);
+      sKeys.put("layout/fragment_mybook_0", com.example.forestapp.R.layout.fragment_mybook);
     }
   }
 }

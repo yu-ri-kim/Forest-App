@@ -25,7 +25,7 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding implements co
     private final android.widget.EditText mboundView2;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback2;
+    private final android.view.View.OnClickListener mCallback3;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -123,7 +123,7 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding implements co
         this.mboundView2.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback2 = new com.example.forestapp.generated.callback.OnClickListener(this, 1);
+        mCallback3 = new com.example.forestapp.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -277,7 +277,7 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding implements co
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.idinput, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, idinputandroidTextAttrChanged);
-            this.loginbtn.setOnClickListener(mCallback2);
+            this.loginbtn.setOnClickListener(mCallback3);
             androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.mboundView2, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, mboundView2androidTextAttrChanged);
         }
         if ((dirtyFlags & 0x19L) != 0) {

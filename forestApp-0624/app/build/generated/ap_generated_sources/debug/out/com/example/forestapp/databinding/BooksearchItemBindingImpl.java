@@ -13,16 +13,15 @@ public class BooksearchItemBindingImpl extends BooksearchItemBinding  {
     private static final android.util.SparseIntArray sViewsWithIds;
     static {
         sIncludes = null;
-        sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.plantimage, 3);
+        sViewsWithIds = null;
     }
     // views
     @NonNull
     private final android.widget.LinearLayout mboundView0;
     @NonNull
-    private final android.widget.TextView mboundView1;
-    @NonNull
     private final android.widget.TextView mboundView2;
+    @NonNull
+    private final android.widget.TextView mboundView3;
     // variables
     // values
     // listeners
@@ -32,15 +31,16 @@ public class BooksearchItemBindingImpl extends BooksearchItemBinding  {
         this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
     }
     private BooksearchItemBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 2
-            , (android.widget.ImageView) bindings[3]
+        super(bindingComponent, root, 3
+            , (android.widget.ImageView) bindings[1]
             );
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];
         this.mboundView0.setTag(null);
-        this.mboundView1 = (android.widget.TextView) bindings[1];
-        this.mboundView1.setTag(null);
         this.mboundView2 = (android.widget.TextView) bindings[2];
         this.mboundView2.setTag(null);
+        this.mboundView3 = (android.widget.TextView) bindings[3];
+        this.mboundView3.setTag(null);
+        this.plantimage.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -49,7 +49,7 @@ public class BooksearchItemBindingImpl extends BooksearchItemBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x8L;
+                mDirtyFlags = 0x10L;
         }
         requestRebind();
     }
@@ -79,7 +79,7 @@ public class BooksearchItemBindingImpl extends BooksearchItemBinding  {
     public void setPlant(@Nullable com.example.forestapp.ui.bookSearch.BkViewModel Plant) {
         this.mPlant = Plant;
         synchronized(this) {
-            mDirtyFlags |= 0x4L;
+            mDirtyFlags |= 0x8L;
         }
         notifyPropertyChanged(BR.plant);
         super.requestRebind();
@@ -92,6 +92,8 @@ public class BooksearchItemBindingImpl extends BooksearchItemBinding  {
                 return onChangePlantData((androidx.databinding.ObservableField<java.lang.String>) object, fieldId);
             case 1 :
                 return onChangePlantName((androidx.databinding.ObservableField<java.lang.String>) object, fieldId);
+            case 2 :
+                return onChangePlantImg((androidx.databinding.ObservableField<java.lang.String>) object, fieldId);
         }
         return false;
     }
@@ -113,6 +115,15 @@ public class BooksearchItemBindingImpl extends BooksearchItemBinding  {
         }
         return false;
     }
+    private boolean onChangePlantImg(androidx.databinding.ObservableField<java.lang.String> PlantImg, int fieldId) {
+        if (fieldId == BR._all) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x4L;
+            }
+            return true;
+        }
+        return false;
+    }
 
     @Override
     protected void executeBindings() {
@@ -121,16 +132,18 @@ public class BooksearchItemBindingImpl extends BooksearchItemBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        java.lang.String plantImgGet = null;
         java.lang.String plantDataGet = null;
         com.example.forestapp.ui.bookSearch.BkViewModel plant = mPlant;
         androidx.databinding.ObservableField<java.lang.String> plantData = null;
         androidx.databinding.ObservableField<java.lang.String> plantName = null;
         java.lang.String plantNameGet = null;
+        androidx.databinding.ObservableField<java.lang.String> plantImg = null;
 
-        if ((dirtyFlags & 0xfL) != 0) {
+        if ((dirtyFlags & 0x1fL) != 0) {
 
 
-            if ((dirtyFlags & 0xdL) != 0) {
+            if ((dirtyFlags & 0x19L) != 0) {
 
                     if (plant != null) {
                         // read plant.data
@@ -144,7 +157,7 @@ public class BooksearchItemBindingImpl extends BooksearchItemBinding  {
                         plantDataGet = plantData.get();
                     }
             }
-            if ((dirtyFlags & 0xeL) != 0) {
+            if ((dirtyFlags & 0x1aL) != 0) {
 
                     if (plant != null) {
                         // read plant.name
@@ -158,17 +171,36 @@ public class BooksearchItemBindingImpl extends BooksearchItemBinding  {
                         plantNameGet = plantName.get();
                     }
             }
+            if ((dirtyFlags & 0x1cL) != 0) {
+
+                    if (plant != null) {
+                        // read plant.img
+                        plantImg = plant.img;
+                    }
+                    updateRegistration(2, plantImg);
+
+
+                    if (plantImg != null) {
+                        // read plant.img.get()
+                        plantImgGet = plantImg.get();
+                    }
+            }
         }
         // batch finished
-        if ((dirtyFlags & 0xeL) != 0) {
+        if ((dirtyFlags & 0x1aL) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView1, plantNameGet);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView2, plantNameGet);
         }
-        if ((dirtyFlags & 0xdL) != 0) {
+        if ((dirtyFlags & 0x19L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView2, plantDataGet);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView3, plantDataGet);
+        }
+        if ((dirtyFlags & 0x1cL) != 0) {
+            // api target 1
+
+            com.example.forestapp.ui.bookSearch.BkViewModel.loadImage(this.plantimage, plantImgGet);
         }
     }
     // Listener Stub Implementations
@@ -178,8 +210,9 @@ public class BooksearchItemBindingImpl extends BooksearchItemBinding  {
     /* flag mapping
         flag 0 (0x1L): plant.data
         flag 1 (0x2L): plant.name
-        flag 2 (0x3L): plant
-        flag 3 (0x4L): null
+        flag 2 (0x3L): plant.img
+        flag 3 (0x4L): plant
+        flag 4 (0x5L): null
     flag mapping end*/
     //end
 }

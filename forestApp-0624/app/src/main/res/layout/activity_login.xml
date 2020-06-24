@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.forestapp.LoginViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="200dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="100dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_logo_login" />
+
+        <ImageView
+            android:id="@+id/loginimg"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_id_login"
+            android:layout_marginLeft="70dp"
+            android:layout_below="@id/imageView1" />
+
+        <EditText
+            android:id="@+id/idinput"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:hint="아이디를 입력하세요."
+            android:text="@={model.name}"
+            android:layout_marginLeft="5dp"
+            android:layout_alignBottom="@+id/loginimg"
+            android:layout_toRightOf="@+id/loginimg"/>
+
+        <ImageView
+            android:id="@+id/pwdimg"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_password_login"
+            android:layout_below="@+id/loginimg" />
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:hint="비밀번호를 입력하세요."
+            android:inputType="textPassword"
+            android:text="@={model.pwd}"
+            android:layout_alignBottom="@+id/pwdimg"
+            android:layout_toRightOf="@+id/pwdimg" />
+
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:text="SIGNUP"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/pwdimg"
+            android:onClick="SignupClicked"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/loginbtn"
+
+            />
+
+        <Button
+            android:id="@+id/loginbtn"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="70dp"
+            android:text="LOGIN"
+            android:enabled="@{model.isValid}"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/pwdimg"
+            android:onClick="@{()-> model.login()}"
+             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Copyrightⓒ2020 ForU All rights reserved."
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="70dp"
+       />
+
+
+
+    </RelativeLayout>
+</layout>
