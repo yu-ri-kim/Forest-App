@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Playdata\\Documents\\forestApp-0624\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Playdata\\.gradle\\caches\\transforms-2\\files-2.1\\28120aa98d624ce8fee0a8087788fd91\\constraintlayout-1.1.3\\res\\values\\values.xml",
@@ -20,40 +20,6 @@
                         "endLines": "8,16,22,38,39,40,48,59,60,61,64,65,68,71,72,73,74,75,78,81,82,83,84,89,92,95,96,97,102,103,104,107,110,111,114,117,120,123,124,127,130,131,136,137,142,145,148,149,150,151,152,153,154,155,156,157,166,5600,5601,5602,5931",
                         "endColumns": "60,11,47,51,60,45,11,60,59,69,11,67,11,11,61,64,67,66,11,11,66,64,64,11,11,11,65,66,11,68,65,11,11,66,11,11,11,11,64,11,11,64,11,66,11,11,11,64,61,61,61,58,59,60,60,58,11,2575,131,3263,107",
                         "endOffsets": "391,682,1014,1824,1885,1931,2290,2880,2940,3010,3143,3211,3340,3466,3528,3593,3661,3728,3851,3976,4043,4108,4173,4354,4475,4596,4662,4729,4939,5008,5074,5199,5325,5392,5518,5645,5770,5897,5962,6088,6211,6276,6484,6551,6731,6851,6971,7036,7098,7160,7222,7281,7341,7402,7463,7522,7897,359905,360037,363301,381818"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Playdata\\Documents\\forestApp-0624\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "4,2,3",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "157,57,105",
-                        "endColumns": "45,46,50",
-                        "endOffsets": "198,99,151"
-                    },
-                    "to": {
-                        "startLines": "240,241,242",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "12630,12676,12723",
-                        "endColumns": "45,46,50",
-                        "endOffsets": "12671,12718,12769"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Playdata\\Documents\\forestApp-0624\\app\\src\\main\\res\\values\\dimens.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "90,149",
-                        "endColumns": "57,55",
-                        "endOffsets": "143,200"
-                    },
-                    "to": {
-                        "startLines": "409,410",
-                        "startColumns": "4,4",
-                        "startOffsets": "24012,24070",
-                        "endColumns": "57,55",
-                        "endOffsets": "24065,24121"
                     }
                 },
                 {
@@ -76,7 +42,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Playdata\\Documents\\forestApp-0624\\app\\src\\main\\res\\values\\string.xml",
+                    "source": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "90,149",
+                        "endColumns": "57,55",
+                        "endOffsets": "143,200"
+                    },
+                    "to": {
+                        "startLines": "409,410",
+                        "startColumns": "4,4",
+                        "startOffsets": "24012,24070",
+                        "endColumns": "57,55",
+                        "endOffsets": "24065,24121"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\src\\main\\res\\values\\string.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
@@ -131,25 +114,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Playdata\\Documents\\forestApp-0624\\app\\src\\main\\res\\values\\array.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "5",
-                        "endColumns": "19",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "150",
-                        "endLines": "5",
-                        "endColumns": "19",
-                        "endOffsets": "244"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Playdata\\.gradle\\caches\\transforms-2\\files-2.1\\31073a0e57cc212739f4997e886ea889\\databinding-adapters-4.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4",
@@ -164,6 +128,23 @@
                         "startOffsets": "43396,43453,44396",
                         "endColumns": "56,42,40",
                         "endOffsets": "43448,43491,44432"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "157,57,105",
+                        "endColumns": "45,46,50",
+                        "endOffsets": "198,99,151"
+                    },
+                    "to": {
+                        "startLines": "240,241,242",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "12630,12676,12723",
+                        "endColumns": "45,46,50",
+                        "endOffsets": "12671,12718,12769"
                     }
                 },
                 {
@@ -184,20 +165,41 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Playdata\\Documents\\forestApp-0624\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\src\\main\\res\\values\\array.xml",
                     "from": {
-                        "startLines": "5,1,3,7,6,9,2,8",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "157,17,106,267,224,368,60,316",
-                        "endColumns": "65,41,47,47,41,49,44,50",
-                        "endOffsets": "218,54,149,310,261,413,100,362"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "19",
+                        "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "853,854,855,856,857,858,859,860",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "57372,57438,57480,57528,57576,57618,57668,57713",
-                        "endColumns": "65,41,47,47,41,49,44,50",
-                        "endOffsets": "57433,57475,57523,57571,57613,57663,57708,57759"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "150",
+                        "endLines": "5",
+                        "endColumns": "19",
+                        "endOffsets": "244"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "7",
+                        "endColumns": "12",
+                        "endOffsets": "374"
+                    },
+                    "to": {
+                        "startLines": "874",
+                        "startColumns": "4",
+                        "startOffsets": "58768",
+                        "endLines": "879",
+                        "endColumns": "12",
+                        "endOffsets": "59082"
                     }
                 },
                 {
@@ -277,6 +279,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Playdata\\Pictures\\myProject\\forestApp\\forestApp-0624\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "5,1,3,7,6,9,2,8",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "157,17,106,267,224,368,60,316",
+                        "endColumns": "65,41,47,47,41,49,44,50",
+                        "endOffsets": "218,54,149,310,261,413,100,362"
+                    },
+                    "to": {
+                        "startLines": "853,854,855,856,857,858,859,860",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "57372,57438,57480,57528,57576,57618,57668,57713",
+                        "endColumns": "65,41,47,47,41,49,44,50",
+                        "endOffsets": "57433,57475,57523,57571,57613,57663,57708,57759"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Playdata\\.gradle\\caches\\transforms-2\\files-2.1\\9b843ef8b45a09e63c481ebf2cc33a53\\jetified-viewpager2-1.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2",
@@ -346,25 +365,6 @@
                         "endLines": "308,309,415,416,417,418,419,420,421,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,658,659,660,661,662,663,664,665,666,667,668,669,670,671,672,673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692,704,705,720,721,722,723,724,725,726,727,728,729,734,764,852,3152,3156,3157,3161,3162,3685,3686,5571,5837,5869,5923,5930",
                         "endColumns": "68,62,69,67,71,69,60,73,72,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,64,58,58,59,59,59,59,59,59,59,59,59,59,58,59,59,59,59,59,59,59,59,59,59,58,59,59,58,58,58,58,58,58,34,34,54,62,54,57,56,49,60,56,33,34,34,69,70,116,12,109,12,128,71,66,24,24,24,24,24",
                         "endOffsets": "17179,17242,24426,24494,24566,24636,24697,24771,24844,38986,39047,39109,39173,39235,39296,39364,39464,39524,39590,39663,39732,39789,39841,39903,40493,40569,40634,40693,40752,40812,40872,40932,40992,41052,41112,41172,41232,41292,41352,41411,41471,41531,41591,41651,41711,41771,41831,41891,41951,42011,42070,42130,42190,42249,42308,42367,42426,42485,42544,43127,43162,43921,43984,44039,44097,44154,44204,44265,44322,44356,44391,44610,46386,57367,209978,210179,210289,210490,210619,247935,248002,355819,376859,378924,381333,381710"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Playdata\\Documents\\forestApp-0624\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "7",
-                        "endColumns": "12",
-                        "endOffsets": "374"
-                    },
-                    "to": {
-                        "startLines": "874",
-                        "startColumns": "4",
-                        "startOffsets": "58768",
-                        "endLines": "879",
-                        "endColumns": "12",
-                        "endOffsets": "59082"
                     }
                 },
                 {

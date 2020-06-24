@@ -3,6 +3,7 @@ package com.example.forestapp.ui.bookSearch;
 import android.text.TextUtils;
 import android.util.Log;
 
+import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.databinding.ObservableArrayList;
 import androidx.databinding.ObservableField;
@@ -20,11 +21,14 @@ import java.util.List;
 public class BookSearchViewModel extends baseViewModel{
     public final ObservableArrayList<BkViewModel> initplants = new ObservableArrayList<>();
     public ObservableArrayList<BkViewModel> plants = new ObservableArrayList<>();
+    public final ObservableField<Integer> selectedItemPosition = new ObservableField<>();
 
     private RequestForServer requestForServer = new RequestForServer(); // 서버 통신 객체
 
     //binding하고 있는 값들
     public final ObservableField<String> search = new ObservableField<>();
+
+    // 어떤 메뉴를 골랐는지
 
     @Override
     public void onCreate() {

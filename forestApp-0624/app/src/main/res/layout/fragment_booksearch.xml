@@ -27,10 +27,12 @@
             android:id="@+id/search_tab"
             android:layout_width="99dp"
             android:layout_height="49dp"
+            android:selectedItemPosition="@={model.selectedItemPosition}"
             android:entries="@array/menu"
             />
 
         <ListView
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/search_view"
