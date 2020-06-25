@@ -1,0 +1,11 @@
+<resources>
+    <string name="title_book">도감</string>
+    <string name="title_mybook">내도감</string>
+    <string name="title_booksearch">검색</string>
+
+    <string name="title_activity_book_main">MainActivity</string>
+    <string name="title_home">도감</string>
+    <string name="title_dashboard">내도감</string>
+    <string name="title_notifications">검색</string>
+    <string name="title_hurbsearch">약초찾기</string>
+</resources>
