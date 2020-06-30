@@ -22,7 +22,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBox"
         android:layout_marginBottom="110dp"
         android:layout_centerHorizontal="true"
         android:text="Copyrightⓒ2020 Beauti4rest All rights reserved."
