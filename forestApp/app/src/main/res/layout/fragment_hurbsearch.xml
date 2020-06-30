@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.beautifourest.forestapp.ui.hurbSearch.HurbSearchViewModel"/>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            >
+
+            <com.beautifourest.forestapp.FButton
+                android:id="@+id/insert_disease"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:drawableTop="@drawable/ic_mydisease_resize_100"
+                android:onClick="@{()-> model.nextDialog()}"
+                android:text="관심있는 질병등록"
+                android:textColor="@android:color/background_dark"
+                fbutton:buttonColor="@color/fbutton_color_clouds"
+                fbutton:shadowEnabled="true" />
+
+            <com.beautifourest.forestapp.FButton
+                android:id="@+id/herb_recommend"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:drawableTop="@drawable/ic_herbrecommend_resize_100"
+                android:onClick="@{()-> model.nextFragment1()}"
+                android:text="당신이 원하는 허브"
+                android:layout_marginBottom="20dp"
+
+                android:textColor="@android:color/background_dark"
+                fbutton:buttonColor="@color/color3"
+                fbutton:shadowEnabled="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <com.beautifourest.forestapp.FButton
+                android:id="@+id/mushroom"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:text="독버섯 구분하기"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:drawableTop="@drawable/ic_mushroom_resize_100"
+                android:textColor="@android:color/background_dark"
+                fbutton:buttonColor="@color/color2"
+                android:onClick="@{()-> model.nextFragment2()}"
+                fbutton:shadowEnabled="true" />
+
+            <com.beautifourest.forestapp.FButton
+                android:id="@+id/heart_tmp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:drawableTop="@drawable/ic_heart_resize_100"
+                android:text="준 비 중"
+
+                android:textColor="@android:color/background_dark"
+                fbutton:buttonColor="@color/color4"
+                fbutton:shadowEnabled="true" />
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/tmp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{model.tmp}"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+
+
+</layout>

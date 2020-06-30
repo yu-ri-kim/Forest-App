@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.beautifourest.forestapp.ui.herbRecommend.HerbRcViewModel"/>
+    </data>
+
+
+    <RelativeLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:id="@+id/bubble"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:gravity="center_horizontal"
+            android:background="@drawable/ic_bubble"
+            android:text="@{model.user_info}"/>
+
+        <ImageView
+            android:id="@+id/pwdimg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_herbrecommend_resize_100"
+            android:layout_toRightOf="@+id/bubble" />
+
+        <com.beautifourest.forestapp.FButton
+            android:id="@+id/disease_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{model.disease_list}"
+            android:padding="5dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/bubble"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            fbutton:buttonColor="@color/fbutton_color_emerald"
+            fbutton:shadowEnabled="false" />
+
+        <GridView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/disease_name"
+            android:stretchMode="columnWidth"
+            android:id="@+id/gridView"
+            android:numColumns="4"
+            app:items="@{model.herbs}"/>
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="model"
+            type="com.beautifourest.forestapp.ui.mybookInfo.MybookInfoViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:layout_gravity="center"
+                android:text="@{model.name}"
+                />
+
+            <ImageView
+                android:id="@+id/plantimg"
+                android:layout_width="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                app:imageURL="@{model.img}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="left">
+
+                <TextView
+                    android:id="@+id/ename"
+                    android:layout_width="100dp"
+                    android:layout_height="24dp"
+                    android:text="영문이름" />
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.ename}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="left">
+
+                <TextView
+                    android:id="@+id/lifetime"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="이야기" />
+
+                <TextView
+                    android:maxLines = "3"
+                    android:isScrollContainer="true"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.lifetime}" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="left">
+
+                <TextView
+                    android:id="@+id/gbn"
+                    android:layout_width="100dp"
+                    android:layout_height="24dp"
+                    android:text="종류" />
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.gbn}" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="left">
+
+                <TextView
+                    android:id="@+id/classname"
+                    android:layout_width="100dp"
+                    android:layout_height="24dp"
+                    android:text="과" />
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.classname}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="left">
+
+                <TextView
+                    android:id="@+id/isherb"
+                    android:layout_width="100dp"
+                    android:layout_height="24dp"
+                    android:text="약초가능여부" />
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.isHerb}" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <com.beautifourest.forestapp.FButton
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="수정"
+                android:visibility="invisible"
+                android:textAllCaps="false"
+                fbutton:buttonColor="@color/fbutton_color_green_sea"
+                android:onClick="@{()-> model.update()}" />
+
+            <com.beautifourest.forestapp.FButton
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="삭제"
+                android:id="@+id/deleteBtn"
+                android:textAllCaps="false"
+                android:layout_marginLeft="30dp"
+                android:onClick="@{()-> model.delete()}"
+                fbutton:buttonColor="@color/fbutton_color_clouds" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>
+
