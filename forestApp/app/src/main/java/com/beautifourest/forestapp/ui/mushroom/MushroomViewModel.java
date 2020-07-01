@@ -114,7 +114,7 @@ public class MushroomViewModel extends baseViewModel {
             File file = new File(filePath);
             try {
                 OutputStream os = new BufferedOutputStream(new FileOutputStream(file));
-                originalBm.compress(Bitmap.CompressFormat.JPEG, 40, os);
+                originalBm.compress(Bitmap.CompressFormat.JPEG, 70, os);
                 os.close();
 
                 RequestBody rqFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);

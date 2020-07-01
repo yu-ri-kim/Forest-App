@@ -276,7 +276,7 @@ public class MushroomFragment extends Fragment {
     private void setImage() {
         ImageView imageView = o.findViewById(R.id.imageView);
 
-        ImageResizeUtils.resizeFile(tempFile, tempFile, 640, isCamera);
+        ImageResizeUtils.resizeFile(tempFile, tempFile, 1280, isCamera);
 
         BitmapFactory.Options options = new BitmapFactory.Options();
         Bitmap originalBm = BitmapFactory.decodeFile(tempFile.getAbsolutePath(), options);
