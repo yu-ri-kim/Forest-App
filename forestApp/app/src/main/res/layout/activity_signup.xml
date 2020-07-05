@@ -143,10 +143,38 @@
 
         </LinearLayout>
 
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView android:id="@+id/link1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="다음 버튼을 누름으로써 개인정보취급방침" />
+
+            <TextView android:id="@+id/link2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="5sp"
+                android:text="https://yu-ri.tistory.com/m/23"
+                android:autoLink="web"
+                android:linksClickable="true" />
+
+            <TextView android:id="@+id/link3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="에 동의합니다." />
+
+        </LinearLayout>
+
+
         <com.beautifourest.forestapp.FButton
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="-1dp"
             android:enabled="@{model.isValid}"
             android:onClick="@{()-> model.signup()}"
