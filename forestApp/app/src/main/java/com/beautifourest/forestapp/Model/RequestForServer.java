@@ -34,7 +34,7 @@ public class RequestForServer {
                 .build();
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("서버주소")
+                .baseUrl("http://52.14.219.87:8080")
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -400,7 +400,7 @@ public class RequestForServer {
         }
         else if(op.equals("uploadMushroom")){
             Retrofit retrofit2 = new Retrofit.Builder()
-                    .baseUrl("서버주소")
+                    .baseUrl("http://18.219.1.148:5000")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             RetrofitInterface retrofitAPI2 = retrofit2.create(RetrofitInterface.class);
