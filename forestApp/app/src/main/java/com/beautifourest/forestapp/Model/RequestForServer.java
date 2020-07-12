@@ -400,7 +400,7 @@ public class RequestForServer {
         }
         else if(op.equals("uploadMushroom")){
             Retrofit retrofit2 = new Retrofit.Builder()
-                    .baseUrl("http://18.219.1.148:5000")
+                    .baseUrl("http://3.21.164.126:5000")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             RetrofitInterface retrofitAPI2 = retrofit2.create(RetrofitInterface.class);
