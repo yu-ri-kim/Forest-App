@@ -18,4 +18,5 @@ public interface CallAnotherActivityNavigator {
     void closeFragment();
     void forToast(String msg);
     void refreshFragment(int num);
+    void callImageActivity(List<String> imgs, String name);
 }

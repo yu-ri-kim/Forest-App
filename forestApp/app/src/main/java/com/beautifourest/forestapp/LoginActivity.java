@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity implements CallAnotherActiv
 
     /* 회원가입 버튼 -> 회원가입 액티비티 */
     public void SignupClicked(View view) {
+        finish();
         Intent intent = new Intent(LoginActivity.this, SignupActivity.class) ;
         startActivity(intent) ;
     }
@@ -79,6 +80,11 @@ public class LoginActivity extends AppCompatActivity implements CallAnotherActiv
 
     @Override
     public void refreshFragment(int num) {
+
+    }
+
+    @Override
+    public void callImageActivity(List<String> imgs, String name) {
 
     }
 }

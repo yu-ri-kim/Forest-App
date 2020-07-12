@@ -134,4 +134,9 @@ public class InsertDialogFragment extends DialogFragment implements CallAnotherA
     public void refreshFragment(int num) {
 
     }
+
+    @Override
+    public void callImageActivity(List<String> imgs, String name) {
+
+    }
 }

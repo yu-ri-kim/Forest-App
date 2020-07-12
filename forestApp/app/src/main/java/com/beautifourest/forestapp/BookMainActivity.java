@@ -3,6 +3,7 @@ package com.beautifourest.forestapp;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import java.io.Serializable;
 import java.util.List;
 
 /* 메인 엑티비티 */
@@ -73,7 +75,7 @@ public class BookMainActivity extends AppCompatActivity implements CallAnotherAc
         mbFragment = new MybookFragment(this);
         hrcFragment = new HerbRcFragment(this);
         mrFragment = new MushroomFragment();
-        biFragment = new BookInfoFragment();
+        biFragment = new BookInfoFragment(this);
         hiFragment=new HerbInfoFragment();
         mbiFragment=new MybookInfoFragment(this);
 
@@ -246,6 +248,15 @@ public class BookMainActivity extends AppCompatActivity implements CallAnotherAc
             ft.attach(frg);
             ft.commit();
         }
+    }
+
+    /* 사진 크게 보는 액티비티 */
+    @Override
+    public void callImageActivity(List<String> imgs, String name) {
+        Intent intent = new Intent(getApplicationContext(), ImageViewActivity.class);
+        intent.putExtra("imgs", (Serializable) imgs);
+        intent.putExtra("name", name);
+        startActivity(intent);
     }
 
     /* onActivityResult로 받은 이전 activity의 결과를 eventbus로 전달한다 */

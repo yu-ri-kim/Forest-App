@@ -155,11 +155,14 @@ public class MushroomViewModel extends baseViewModel {
                     rotateLoading.stop();
                     if(data.getResult() == 0){
                         Log.d("camera_forest","독버섯");
-                        mushroom_result.set("먹을 수 없어요 T.T");
+                        mushroom_result.set("버섯이 아닙니다");
                     }
-                    else{
+                    else if(data.getResult()==1){
                         Log.d("camera_forest","식용버");
                         mushroom_result.set("먹을 수 있어요 ^0^\n먹기 전 전문가와 상담이 꼭 필요합니다.");
+                    }
+                    else{
+                        mushroom_result.set("먹을 수 없어요 T.T");
                     }
                 }
 

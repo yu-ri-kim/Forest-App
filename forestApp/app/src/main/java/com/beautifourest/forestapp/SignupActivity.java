@@ -36,6 +36,7 @@ public class SignupActivity extends AppCompatActivity implements CallAnotherActi
     /* 회원가입 성공시 로그인 화면으로 전환 */
     @Override
     public void callActivity(UserJson user) {
+        finish();
         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
     }
 
@@ -70,4 +71,10 @@ public class SignupActivity extends AppCompatActivity implements CallAnotherActi
     public void refreshFragment(int num) {
 
     }
+
+    @Override
+    public void callImageActivity(List<String> imgs, String name) {
+
+    }
+
 }

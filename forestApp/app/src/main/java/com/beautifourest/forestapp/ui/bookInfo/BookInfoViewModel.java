@@ -1,16 +1,22 @@
 package com.beautifourest.forestapp.ui.bookInfo;
 
+import android.content.Intent;
+import android.util.Log;
 import android.widget.ImageView;
 
 import androidx.databinding.BindingAdapter;
 import androidx.databinding.ObservableField;
 
+import com.beautifourest.forestapp.BookMainActivity;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.beautifourest.forestapp.CallAnotherActivityNavigator;
 import com.beautifourest.forestapp.Model.PlantJson;
 import com.beautifourest.forestapp.Model.RequestForServer;
 import com.beautifourest.forestapp.baseViewModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /* 도감 상세정보 viewmodel */
 public class BookInfoViewModel extends baseViewModel {
@@ -27,6 +33,7 @@ public class BookInfoViewModel extends baseViewModel {
     public final ObservableField<String> classname=new ObservableField<>();
     public final ObservableField<String> isHerb=new ObservableField<>();
 
+    public String img2 ="";
 
     public BookInfoViewModel(PlantJson plant, CallAnotherActivityNavigator navigator) {
         this.navigator = navigator;
@@ -45,11 +52,24 @@ public class BookInfoViewModel extends baseViewModel {
         else{
             this.isHerb.set("약용 식물");
         }
+
+        this.img2 = plant.getFsImg2();
     }
+
+
+    public void showImage(){
+        List<String> imgs= new ArrayList<>();
+        imgs.add(img.get());
+        imgs.add(img2);
+
+        navigator.callImageActivity(imgs,name.get());
+    }
+
     @Override
     public void onCreate() {
 
     }
+
     @Override
     public void onResume() {
 
