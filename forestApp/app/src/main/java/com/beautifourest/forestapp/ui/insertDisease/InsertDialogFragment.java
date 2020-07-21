@@ -106,7 +106,7 @@ public class InsertDialogFragment extends DialogFragment implements CallAnotherA
     }
 
     @Override
-    public void callFragmentForInfo(int num, PlantJson info, MyplantsJson info2) {
+    public void callFragmentForInfo(int num, PlantJson info, MyplantsJson info2, UserJson user) {
 
     }
 

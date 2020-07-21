@@ -12,7 +12,7 @@ import java.util.List;
 public interface CallAnotherActivityNavigator {
     void callActivity(UserJson user);
     void callFragment(UserJson user, int num, List<DiseaseJson> diseaseList);
-    void callFragmentForInfo(int num, PlantJson info, MyplantsJson info2);
+    void callFragmentForInfo(int num, PlantJson info, MyplantsJson info2, UserJson user);
     void callFragmentForInfo(int num, HerbJson herb_info);
     void callFramgemntForUpdate(int num, MyplantsJson info, UserJson user);
     void closeFragment();

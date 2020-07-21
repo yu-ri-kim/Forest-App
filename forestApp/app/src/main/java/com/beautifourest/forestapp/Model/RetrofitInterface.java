@@ -27,6 +27,12 @@ public interface RetrofitInterface {
     @GET("/PlantInfo/getAllPlantsInfo")
     Call<List<PlantJson>> getPlantInfo_detail();
 
+    @GET("/PlantInfo/getAllPlantsByMok")
+    Call<List<PlantJson>> getPlantInfoMok_detail();
+
+    @GET("/PlantInfo/getAllPlantsByCho")
+    Call<List<PlantJson>> getPlantInfoCho_detail();
+
     @GET("/PlantInfo/getAllHerb")
     Call<List<HerbJson>> getHerbInfo();
 
@@ -83,4 +89,7 @@ public interface RetrofitInterface {
 
     @POST("/TempPlants/getoneTempPlants")
     Call<MyplantsJsons> getOnePlants(@Body MyplantsJson myplant);
+
+    @GET("/TempPlants/getALLTempPlants")
+    Call<MyplantsJsons> getAllTempPlants();
 }

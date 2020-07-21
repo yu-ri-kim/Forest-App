@@ -14,6 +14,7 @@ import com.beautifourest.forestapp.Model.RequestForServer;
 import com.beautifourest.forestapp.Model.RetroCallback;
 import com.beautifourest.forestapp.baseViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BooksViewModel extends baseViewModel {
@@ -24,6 +25,8 @@ public class BooksViewModel extends baseViewModel {
     public final ObservableArrayList<BookViewModel> initplants = new ObservableArrayList<>();
     public final ObservableArrayList<BookViewModel> initherbs=new ObservableArrayList<>();
     public ObservableArrayList<BookViewModel> plants = new ObservableArrayList<>();
+    public ArrayList<BookViewModel> initMok = new ArrayList<>();
+    public ArrayList<BookViewModel> initCho = new ArrayList<>();
 
     View view;
     GridView gridView;
@@ -41,6 +44,8 @@ public class BooksViewModel extends baseViewModel {
     /*
         0 : 전체도감
         1 : 허브도감
+        2 : 목본류
+        3 : 초본류
     */
     private int position;
     private int check;
@@ -54,7 +59,7 @@ public class BooksViewModel extends baseViewModel {
                 plantname=((BookViewModel)adapter.getItem(position)).name.get();
                 herbid=((BookViewModel)adapter.getItem(position)).hrbid.get();
 
-                if(check==1){
+                if(check==1 || check==3 || check ==4 ){
                     getInfoByName();    //식물 정보 받아옴
                 }
                 else if(check==2){
@@ -65,6 +70,9 @@ public class BooksViewModel extends baseViewModel {
 
         getInitList1();
         getInitList2();
+        getInitListMok();
+        getInitListCho();
+
     }
 
     @Override
@@ -85,17 +93,40 @@ public class BooksViewModel extends baseViewModel {
     /* 스피너의 선택 내용이 바뀌면 호출된다 */
     public void SpinnerItemSelected(AdapterView<?> parent, View view, int position, long id) {
         this.position=position;
-        if(position==0) {
+
+        if(position==0) { // 전체
             check=1;
             plants.clear();
             for(BookViewModel m : initplants){
                 plants.add(m);
             }
         }
-        if(position==1) {
+        else if(position==1) { // 허브
             check=2;
             plants.clear();
             for(BookViewModel m : initherbs){
+                plants.add(m);
+            }
+        }
+        else if(position==2){ // 목본류
+            check=3;
+            plants.clear();
+            if(initMok.size()==0){
+                getInitListMok();
+            }
+            for(BookViewModel m : initMok){
+                plants.add(m);
+            }
+
+        }
+        else if(position==3){ // 초본류
+            check=4;
+            plants.clear();
+
+            if(initCho.size()==0){
+                getInitListCho();
+            }
+            for(BookViewModel m : initCho){
                 plants.add(m);
             }
         }
@@ -189,7 +220,7 @@ public class BooksViewModel extends baseViewModel {
             @Override
             public void onSuccess(int code, Object receivedData) {
                 List<PlantJson> data=(List<PlantJson>)receivedData;
-                navigator.callFragmentForInfo(0,data.get(0),null);
+                navigator.callFragmentForInfo(0,data.get(0),null,null);
             }
 
             @Override
@@ -228,4 +259,67 @@ public class BooksViewModel extends baseViewModel {
 
     }
 
+    /* 목본류 도감 받아오는 함수 */
+    private void getInitListMok(){
+        if(initMok.size()!=0) return;
+
+        /* 실행할 명령어와 서버로 보낼 객체 설정 */
+        requestForServer.setOp("AllPlantMok");
+
+        /* 서버랑 통신 시작 */
+        requestForServer.exec(new RetroCallback() {
+            @Override
+            public void onError(Throwable t) { t.printStackTrace(); }
+
+            @Override
+            public void onSuccess(int code, Object receivedData) {
+                List<PlantJson> data=(List<PlantJson>)receivedData;
+
+                /* 목본류 도감 데이터 넣기 */
+                for(PlantJson d:data){
+                    String img=d.getFsImg1();
+                    String name=d.getFskName();
+
+                    initMok.add(new BookViewModel(null,img,name));
+                }
+            }
+
+            @Override
+            public void onFailure(int code) {
+                Log.d("Test","Failure");
+            }
+        });
+    }
+
+    /* 초본류 도감 받아오는 함수 */
+    private void getInitListCho(){
+        if(initCho.size()!=0) return;
+
+        /* 실행할 명령어와 서버로 보낼 객체 설정 */
+        requestForServer.setOp("AllPlantCho");
+
+        /* 서버랑 통신 시작 */
+        requestForServer.exec(new RetroCallback() {
+            @Override
+            public void onError(Throwable t) { t.printStackTrace(); }
+
+            @Override
+            public void onSuccess(int code, Object receivedData) {
+                List<PlantJson> data=(List<PlantJson>)receivedData;
+
+                /* 초본류 도감 데이터 넣기 */
+                for(PlantJson d:data){
+                    String img=d.getFsImg1();
+                    String name=d.getFskName();
+
+                    initCho.add(new BookViewModel(null,img,name));
+                }
+            }
+
+            @Override
+            public void onFailure(int code) {
+                Log.d("Test","Failure");
+            }
+        });
+    }
 }

@@ -213,7 +213,7 @@ public class BookSearchViewModel extends baseViewModel{
                 List<PlantJson> data = (List<PlantJson>)receivedData;
 
                 /* 상세정보 페이지로 넘어감 */
-                navigator.callFragmentForInfo(0, data.get(0), null);
+                navigator.callFragmentForInfo(0, data.get(0), null, null);
             }
 
             @Override

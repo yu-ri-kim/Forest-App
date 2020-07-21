@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity implements CallAnotherActiv
     public void callFragment(UserJson user, int num, List<DiseaseJson> diseaseList) { }
 
     @Override
-    public void callFragmentForInfo(int num, PlantJson info, MyplantsJson info2) {
+    public void callFragmentForInfo(int num, PlantJson info, MyplantsJson info2, UserJson user) {
 
     }
 

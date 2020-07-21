@@ -34,6 +34,28 @@ public class MyplantsJson implements Serializable {
     @SerializedName("isHerb")
     @Expose
     private Integer isHerb;
+    @SerializedName("isPV")
+    @Expose
+    private Integer isPV;
+    @SerializedName("writeD")
+    @Expose
+    private String writeD;
+
+    public Integer getIsPV() {
+        return isPV;
+    }
+
+    public void setIsPV(Integer isPV) {
+        this.isPV = isPV;
+    }
+
+    public String getWriteD() {
+        return writeD;
+    }
+
+    public void setWriteD(String writeD) {
+        this.writeD = writeD;
+    }
 
     public Integer getBid() {
         return bid;
@@ -119,6 +141,8 @@ public class MyplantsJson implements Serializable {
                 ", fsGbn='" + fsGbn + '\'' +
                 ", fsClassname='" + fsClassname + '\'' +
                 ", isHerb=" + isHerb +
+                ", isPV=" + isPV +
+                ", writeD='" + writeD + '\'' +
                 '}';
     }
 }

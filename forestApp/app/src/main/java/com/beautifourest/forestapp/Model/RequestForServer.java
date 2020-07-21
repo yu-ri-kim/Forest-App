@@ -24,7 +24,7 @@ public class RequestForServer {
 
     /* insert plant, mushroom에 있는 카메라에 사용 */
     private MultipartBody.Part mpFile; // 이미지 보내기 위한 객체
-    private Map<String, RequestBody> rqMap; // 다른 정보를 보내기 위한 객
+    private Map<String, RequestBody> rqMap; // 다른 정보를 보내기 위한 객체
 
     public RequestForServer() {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
@@ -111,6 +111,42 @@ public class RequestForServer {
 
         else if(op.equals("AllPlant")){
             retrofitAPI.getPlantInfo_detail().enqueue(new Callback<List<PlantJson>>() {
+                @Override
+                public void onResponse(Call<List<PlantJson>> call, Response<List<PlantJson>> response) {
+                    if (response.isSuccessful()) {
+                        callback.onSuccess(response.code(), response.body());
+                    } else {
+                        callback.onFailure(response.code());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<List<PlantJson>> call, Throwable t) {
+                    callback.onError(t);
+                }
+            });
+        }
+
+        else if(op.equals("AllPlantMok")){
+            retrofitAPI.getPlantInfoMok_detail().enqueue(new Callback<List<PlantJson>>() {
+                @Override
+                public void onResponse(Call<List<PlantJson>> call, Response<List<PlantJson>> response) {
+                    if (response.isSuccessful()) {
+                        callback.onSuccess(response.code(), response.body());
+                    } else {
+                        callback.onFailure(response.code());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<List<PlantJson>> call, Throwable t) {
+                    callback.onError(t);
+                }
+            });
+        }
+
+        else if(op.equals("AllPlantCho")){
+            retrofitAPI.getPlantInfoCho_detail().enqueue(new Callback<List<PlantJson>>() {
                 @Override
                 public void onResponse(Call<List<PlantJson>> call, Response<List<PlantJson>> response) {
                     if (response.isSuccessful()) {
@@ -354,6 +390,24 @@ public class RequestForServer {
 
         else if(op.equals("getOnePlant")){  //temp plant 중 한 개 가져오기
             retrofitAPI.getOnePlants((MyplantsJson)ob).enqueue(new Callback<MyplantsJsons>() {
+                @Override
+                public void onResponse(Call<MyplantsJsons> call, Response<MyplantsJsons> response) {
+                    if (response.isSuccessful()) {
+                        callback.onSuccess(response.code(), response.body());
+                    } else {
+                        callback.onFailure(response.code());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<MyplantsJsons> call, Throwable t) {
+                    callback.onError(t);
+                }
+            });
+        }
+
+        else if(op.equals("getALLTempPlants")){  // 전체 게시판 가져오기
+            retrofitAPI.getAllTempPlants().enqueue(new Callback<MyplantsJsons>() {
                 @Override
                 public void onResponse(Call<MyplantsJsons> call, Response<MyplantsJsons> response) {
                     if (response.isSuccessful()) {

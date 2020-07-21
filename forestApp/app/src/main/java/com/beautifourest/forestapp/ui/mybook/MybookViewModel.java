@@ -110,7 +110,7 @@ public class MybookViewModel extends baseViewModel {
                 MyplantsJsons da = (MyplantsJsons)receivedData;
                 List<MyplantsJson> data = da.getData();
                 for(MyplantsJson my : data){
-                    Log.d("Test",my.getFsImg1());
+                    // Log.d("Test",my.getFsImg1());
                     init_name_myplants.add(new MbViewModel(my.getFsImg1(),my.getFskName(),my.getIsHerb(), my.getBid()));
                     init_time_myplants.add(new MbViewModel(my.getFsImg1(),my.getFskName(),my.getIsHerb(), my.getBid()));
                     myplants.add(new MbViewModel(my.getFsImg1(),my.getFskName(),my.getIsHerb(),my.getBid()));
@@ -200,7 +200,7 @@ public class MybookViewModel extends baseViewModel {
                 MyPlantsInfoJson data = (MyPlantsInfoJson)receivedData;
                 Log.d("Test","booksearchview model: "+ data.getData().toString());
                 // 프래그먼트 생성
-                navigator.callFragmentForInfo(1, null,  data.getData());
+                navigator.callFragmentForInfo(1, null,  data.getData(), user);
             }
 
             @Override

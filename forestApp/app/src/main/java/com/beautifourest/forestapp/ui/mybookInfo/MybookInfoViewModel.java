@@ -21,8 +21,14 @@ public class MybookInfoViewModel extends baseViewModel {
     private RequestForServer requestForServer = new RequestForServer(); // 서버 통신 객체
     private CallAnotherActivityNavigator navigator;
     MyplantsJson myplant;
+    UserJson user;
+
+    public MybookInfoViewModel() {
+    }
+
     Activity activity;
 
+    public final ObservableField<String> date=new ObservableField<>();
     public final ObservableField<Integer> bid=new ObservableField<>();
     public final ObservableField<String> img=new ObservableField<>();
     public final ObservableField<String> name=new ObservableField<>();
@@ -40,10 +46,14 @@ public class MybookInfoViewModel extends baseViewModel {
         this.activity = activity;
     }
 
-    public MybookInfoViewModel(MyplantsJson myplant, CallAnotherActivityNavigator navigator){
+    public MybookInfoViewModel(MyplantsJson myplant, CallAnotherActivityNavigator navigator, UserJson user){
         this.myplant=myplant;
         this.navigator=navigator;
+        this.user = user;
 
+        Log.d("Test", "************mybookinfoviewmodel "+user.toString());
+
+        this.date.set(myplant.getUid() + " | " + myplant.getWriteD());
         this.bid.set(myplant.getBid());
         this.name.set(myplant.getFskName());
         this.img.set(myplant.getFsImg1());

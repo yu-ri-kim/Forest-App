@@ -311,9 +311,10 @@ public class InsertPlantsDialogFragment extends DialogFragment implements CallAn
     }
 
     @Override
-    public void callFragmentForInfo(int num, PlantJson info, MyplantsJson info2) {
+    public void callFragmentForInfo(int num, PlantJson info, MyplantsJson info2, UserJson user) {
 
     }
+
 
     @Override
     public void callFragmentForInfo(int num, HerbJson herb_info) {

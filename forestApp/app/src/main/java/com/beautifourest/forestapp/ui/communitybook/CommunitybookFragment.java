@@ -1,4 +1,4 @@
-package com.beautifourest.forestapp.ui.mybook;
+package com.beautifourest.forestapp.ui.communitybook;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -12,41 +12,38 @@ import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ObservableArrayList;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.beautifourest.forestapp.CallAnotherActivityNavigator;
 import com.beautifourest.forestapp.Model.UserJson;
 import com.beautifourest.forestapp.R;
-import com.beautifourest.forestapp.databinding.FragmentBooksearchBinding;
+import com.beautifourest.forestapp.databinding.FragmentCommunitybookBinding;
 import com.beautifourest.forestapp.databinding.FragmentMybookBinding;
 
-public class MybookFragment extends Fragment{
-    MybookViewModel model;
-    GridView gridView;
-    UserJson user;
-    static MybookAdapter adapter = new MybookAdapter();
+/* 게시판 fragment */
+public class CommunitybookFragment extends Fragment{
+    private CommunitybookViewModel model;
+    private GridView gridView;
+    private UserJson user;
+
+    static CommunitybookAdapter adapter = new CommunitybookAdapter();
     private CallAnotherActivityNavigator navigator;
 
-    public MybookFragment() {
-        // Required empty public constructor
-    }
-    public static MybookFragment instance() {
-        return new MybookFragment();
+    public CommunitybookFragment() { }
+
+    public CommunitybookFragment(CallAnotherActivityNavigator navigator) {
+        this.navigator = navigator;
     }
 
-    public MybookFragment(CallAnotherActivityNavigator navigator) {
-        this.navigator = navigator;
+    public static CommunitybookFragment instance() {
+        return new CommunitybookFragment();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Object o = DataBindingUtil.inflate(inflater, R.layout.fragment_mybook, container, false).getRoot();
+        Object o = DataBindingUtil.inflate(inflater, R.layout.fragment_communitybook, container, false).getRoot();
 
         Bundle bundle= getArguments();
         user = (UserJson) bundle.getSerializable("user");
-        Log.d("Test","fragment user mybook: "+user.toString());
-
-        // getActivity().setTitle("나만의 도감");
 
         return (View) o;
     }
@@ -56,9 +53,9 @@ public class MybookFragment extends Fragment{
         super.onActivityCreated(savedInstanceState);
 
         gridView=(GridView) getView().findViewById(R.id.gridView);
-        model = new MybookViewModel(user, navigator,gridView ,adapter);
+        model = new CommunitybookViewModel(user, navigator,gridView ,adapter);
 
-        FragmentMybookBinding binding = DataBindingUtil.getBinding(getView());
+        FragmentCommunitybookBinding binding = DataBindingUtil.getBinding(getView());
         binding.setModel(model);
         model.setContext(getContext());
         model.setActivity(getActivity());
@@ -66,12 +63,12 @@ public class MybookFragment extends Fragment{
     }
 
     @BindingAdapter("app:items")
-    public static void setUserList(GridView listView, ObservableArrayList<MbViewModel> myplants) {
+    public static void setUserList(GridView listView, ObservableArrayList<CbViewModel> myplants) {
         if(listView.getAdapter() == null) {
             listView.setAdapter(adapter);
         }
         else {
-            adapter = (MybookAdapter) listView.getAdapter();
+            adapter = (CommunitybookAdapter) listView.getAdapter();
         }
         adapter.addAll(myplants);
     }

@@ -41,6 +41,7 @@ public class InsertPlantsDialogViewModel extends baseViewModel {
     public final ObservableField<String> fsgbn = new ObservableField<>();
     public final ObservableField<String> fsclassname = new ObservableField<>();
     public int isHerb=-1; // 아무값도 선택 안되면 -1
+    public int isPV=1;
 
     private RequestForServer requestForServer = new RequestForServer(); // 서버 통신 객체
     UserJson user; // 유저
@@ -122,6 +123,7 @@ public class InsertPlantsDialogViewModel extends baseViewModel {
         RequestBody rq_fsgbn = RequestBody.create(MediaType.parse("text/plain"), fsgbn.get()+"");
         RequestBody rq_fsclassname = RequestBody.create(MediaType.parse("text/plain"), fsclassname.get()+"");
         RequestBody rq_herb = RequestBody.create(MediaType.parse("text/plain"),isHerb+"");
+        RequestBody rq_pv = RequestBody.create(MediaType.parse("text/plain"),isPV+"");
 
         Log.d("camera_forest", rq_uid.toString());
         Log.d("camera_forest", rq_fskname.toString());
@@ -133,6 +135,7 @@ public class InsertPlantsDialogViewModel extends baseViewModel {
         rqMap.put("fsGbn", rq_fsgbn); // 류
         rqMap.put("fsClassname", rq_fsclassname); // 과
         rqMap.put("isHerb", rq_herb); // 허브인지 아닌지
+        rqMap.put("isPV", rq_pv); // 공개인지 아닌지
 
         // 사진 넣기
         Log.d("camera_forest", "bitmaap viewmodel : " + originalBm);
@@ -227,5 +230,12 @@ public class InsertPlantsDialogViewModel extends baseViewModel {
         else isHerb=0;
     }
 
+    public void onSplitTypeChanged2(RadioGroup radioGroup, int id) {
+        Log.d("Test", id+"");
+        if(id==3) isPV=0;
+        else if(id==4) isPV=1;
+
+        Log.d("Test", "공개 비공개: "+isPV);
+    }
 
 }

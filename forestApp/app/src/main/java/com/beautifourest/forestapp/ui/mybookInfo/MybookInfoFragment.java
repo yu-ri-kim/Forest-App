@@ -3,8 +3,12 @@ package com.beautifourest.forestapp.ui.mybookInfo;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -12,6 +16,7 @@ import androidx.fragment.app.Fragment;
 
 import com.beautifourest.forestapp.CallAnotherActivityNavigator;
 import com.beautifourest.forestapp.Model.MyplantsJson;
+import com.beautifourest.forestapp.Model.UserJson;
 import com.beautifourest.forestapp.R;
 import com.beautifourest.forestapp.databinding.FragmentMybookinfoBinding;
 
@@ -32,10 +37,17 @@ public class MybookInfoFragment extends Fragment {
 
         Bundle bundle= getArguments();
         MyplantsJson myplant = (MyplantsJson) bundle.getSerializable("plant");
-        model = new MybookInfoViewModel(myplant, navigator);
+        UserJson user = (UserJson) bundle.getSerializable("user");
+
+        model = new MybookInfoViewModel(myplant, navigator, user);
         activity = getActivity();
 
         getActivity().setTitle("상세보기");
+
+        if(user.getUid().equals(myplant.getUid())) setHasOptionsMenu(true);
+        else{
+            setHasOptionsMenu(false);
+        }
         return (View) o;
     }
 
@@ -48,5 +60,22 @@ public class MybookInfoFragment extends Fragment {
         model.onCreate();
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.menu_sample, menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.action_update :
+                Toast.makeText(getActivity(), "update 준비중 ", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_delete :
+                model.delete();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

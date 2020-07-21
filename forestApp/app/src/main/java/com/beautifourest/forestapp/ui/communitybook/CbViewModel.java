@@ -1,7 +1,4 @@
-package com.beautifourest.forestapp.ui.mybook;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
+package com.beautifourest.forestapp.ui.communitybook;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -11,7 +8,11 @@ import androidx.databinding.Bindable;
 import androidx.databinding.BindingAdapter;
 import androidx.databinding.ObservableField;
 
-public class MbViewModel extends BaseObservable implements Comparable<MbViewModel>{
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+
+/* 모두의 도감에 보여질 각각의 게시글 */
+public class CbViewModel extends BaseObservable implements Comparable<CbViewModel>{
     ////유경추가///
     public int bid;
     /////////////
@@ -20,14 +21,15 @@ public class MbViewModel extends BaseObservable implements Comparable<MbViewMode
     public final ObservableField<String> name = new ObservableField<>();
 
     public int did;
-
     public int isHerb;
+    public String userid;
 
-    public MbViewModel(String img, String name, int isHerb, int did) {
+    public CbViewModel(String img, String name, int isHerb, int did, String userid) {
         this.img.set(img);
         this.name.set(name);
         this.isHerb=isHerb;
         this.did= did;
+        this.userid = userid;
     }
 
     @BindingAdapter("app:imageURL")
@@ -41,7 +43,7 @@ public class MbViewModel extends BaseObservable implements Comparable<MbViewMode
     }
 
     @Override
-    public int compareTo(MbViewModel myplantsJson) {
+    public int compareTo(CbViewModel myplantsJson) {
         return this.name.get().compareTo(myplantsJson.name.get());
     }
 }
