@@ -5,11 +5,12 @@ import android.widget.ImageView;
 import androidx.databinding.BindingAdapter;
 import androidx.databinding.ObservableField;
 
+import com.beautifourest.forestapp.ui.mybook.MbViewModel;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 /* gridview의 구성요소 */
-public class BookViewModel{
+public class BookViewModel implements Comparable<BookViewModel>{
     public final ObservableField<Integer> hrbid=new ObservableField<>();
     public final ObservableField<String> img=new ObservableField<>();
     public final ObservableField<String> name=new ObservableField<>();
@@ -25,4 +26,8 @@ public class BookViewModel{
         Glide.with(imageView.getContext()).load(imageURL).apply(new RequestOptions().circleCrop()).into(imageView);
     }
 
+    @Override
+    public int compareTo(BookViewModel bookViewModel) {
+        return this.name.get().compareTo(bookViewModel.name.get());
+    }
 }

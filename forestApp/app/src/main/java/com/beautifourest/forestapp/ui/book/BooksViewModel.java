@@ -15,6 +15,7 @@ import com.beautifourest.forestapp.Model.RetroCallback;
 import com.beautifourest.forestapp.baseViewModel;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BooksViewModel extends baseViewModel {
@@ -40,7 +41,6 @@ public class BooksViewModel extends baseViewModel {
         this.adapter=adapter;
         this.navigator=navigator;
     }
-
     /*
         0 : 전체도감
         1 : 허브도감
@@ -72,7 +72,6 @@ public class BooksViewModel extends baseViewModel {
         getInitList2();
         getInitListMok();
         getInitListCho();
-
     }
 
     @Override
@@ -148,6 +147,9 @@ public class BooksViewModel extends baseViewModel {
             public void onSuccess(int code, Object receivedData) {
                 List<PlantJson> data=(List<PlantJson>)receivedData;
 
+                plants.clear();
+                Log.d("initTest", plants.size()+"");
+
                 /* 모든 도감 데이터 넣기 */
                 for(PlantJson d:data){
                     String img=d.getFsImg1();
@@ -156,6 +158,16 @@ public class BooksViewModel extends baseViewModel {
                     initplants.add(new BookViewModel(null,img,name));
                     plants.add(new BookViewModel(null,img,name));
                 }
+
+                Log.d("initTest", data.size()+"");
+
+                Collections.sort(initplants); // 이름순 정렬
+                Collections.sort(plants); // 이름순 정렬
+
+                Log.d("initTest", plants.get(0).name.get());
+                Log.d("initTest", plants.get(1).name.get());
+                Log.d("initTest", plants.size()+"");
+
             }
 
             @Override
@@ -168,6 +180,7 @@ public class BooksViewModel extends baseViewModel {
     /* 허브도감 받아오는 함수 */
     private void getInitList2(){
         if(initherbs.size()!=0) return;
+        plants.clear();
 
         /* 실행할 명령어와 서버로 보낼 객체 설정 */
         requestForServer.setOp("AllHerb");
@@ -193,6 +206,8 @@ public class BooksViewModel extends baseViewModel {
                     plants.add(new BookViewModel(hrbId,img,name));
 
                 }
+                Collections.sort(initherbs); // 이름순 정렬
+                Collections.sort(plants); // 이름순 정렬
             }
 
             @Override
@@ -282,6 +297,8 @@ public class BooksViewModel extends baseViewModel {
 
                     initMok.add(new BookViewModel(null,img,name));
                 }
+                Collections.sort(initMok); // 이름순 정렬
+
             }
 
             @Override
@@ -314,6 +331,8 @@ public class BooksViewModel extends baseViewModel {
 
                     initCho.add(new BookViewModel(null,img,name));
                 }
+                Collections.sort(initCho); // 이름순 정렬
+
             }
 
             @Override
