@@ -104,4 +104,9 @@ public class HurbSearchViewModel extends baseViewModel {
         Log.d("Test","nextFragment2");
         navigator.callFragment(user,4, null);
     }
+
+    public void nextFragment4() {   //병명 취소
+        Log.d("Test","nextFragment5");
+        navigator.callFragment(user,5, diseaseList);
+    }
 }

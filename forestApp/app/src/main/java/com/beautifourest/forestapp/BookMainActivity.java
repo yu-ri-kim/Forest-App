@@ -19,6 +19,7 @@ import com.beautifourest.forestapp.ui.book.BookFragment;
 import com.beautifourest.forestapp.ui.bookInfo.BookInfoFragment;
 import com.beautifourest.forestapp.ui.bookSearch.BookSearchFragment;
 import com.beautifourest.forestapp.ui.community.CommunityFragment;
+import com.beautifourest.forestapp.ui.deleteDisease.DeleteDiseaseFragment;
 import com.beautifourest.forestapp.ui.herbInfo.HerbInfoFragment;
 import com.beautifourest.forestapp.ui.herbRecommend.HerbRcFragment;
 import com.beautifourest.forestapp.ui.hurbSearch.HurbSearchFragment;
@@ -52,12 +53,14 @@ public class BookMainActivity extends AppCompatActivity implements CallAnotherAc
     BookSearchFragment bksFragment;
     HurbSearchFragment hbsFragment;
 
-    /* 허브추천, 버섯감별, 자세한 설명 페이지 */
+    /* 허브추천, 삭제, 버섯감별, 자세한 설명 페이지 */
     HerbRcFragment hrcFragment;
     MushroomFragment mrFragment;
     BookInfoFragment biFragment;
     HerbInfoFragment hiFragment;
     MybookInfoFragment mbiFragment;
+    DeleteDiseaseFragment ddFragment;
+
 
     /* 식물 감별 */
     PlantFragment pfFragment;
@@ -89,6 +92,7 @@ public class BookMainActivity extends AppCompatActivity implements CallAnotherAc
         biFragment = new BookInfoFragment(this);
         hiFragment=new HerbInfoFragment();
         mbiFragment=new MybookInfoFragment(this);
+        ddFragment=new DeleteDiseaseFragment(this);
 
         pfFragment = new PlantFragment();
 
@@ -102,15 +106,15 @@ public class BookMainActivity extends AppCompatActivity implements CallAnotherAc
                 /* menu_bottom.xml에서 지정해줬던 아이디 값을 받아와서 각 아이디값마다 다른 이벤트를 발생 */
                 switch (menuItem.getItemId()){
                     case R.id.navigation_book:{
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_layout,bkFragment).commitAllowingStateLoss();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_layout,bkFragment).addToBackStack(null).commitAllowingStateLoss();
                         return true;
                     }
                     case R.id.navigation_booksearch:{
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_layout,bksFragment).commitAllowingStateLoss();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_layout,bksFragment).addToBackStack(null).commitAllowingStateLoss();
                         return true;
                     }
                     case R.id.navigation_hurbsearch:{
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_layout,hbsFragment).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_layout,hbsFragment).addToBackStack(null).commit();
 
                         /* 유저 값 전달 */
                         Bundle bundle = new Bundle();
@@ -120,13 +124,23 @@ public class BookMainActivity extends AppCompatActivity implements CallAnotherAc
                     }
                     case R.id.navigation_mybook:{
                         // getSupportFragmentManager().beginTransaction().replace(R.id.main_layout,mbFragment,"myFragmentTag").commit();
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_layout,cmFragment,"myFragmentTag").commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_layout,cmFragment,"myFragmentTag").addToBackStack(null).commit();
 
                         /* 유저 값 전달 */
                         Bundle bundle = new Bundle();
                         bundle.putSerializable("user", u);
                         //mbFragment.setArguments(bundle);
                         cmFragment.setArguments(bundle);
+                        return true;
+                    }
+
+                    case R.id.navigation_mushroom:{
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_layout,mrFragment).addToBackStack(null).commit();
+
+                        /* 유저 값 전달 */
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("user", u);
+                        mrFragment.setArguments(bundle);
                         return true;
                     }
                     default:
@@ -147,7 +161,8 @@ public class BookMainActivity extends AppCompatActivity implements CallAnotherAc
            1 : 허브 추천 페이지
            2 : 버섯 ? 독버섯 ?!
            3 : 나만의 도감 추가하기
-           4 : 식물 찾
+           4 : 식물 찾기
+           5 : 관심있는 질병 삭제
 ㄱ         */
 
         if(num==0){
@@ -197,6 +212,23 @@ public class BookMainActivity extends AppCompatActivity implements CallAnotherAc
             bundle.putSerializable("user", u);
             pfFragment.setArguments(bundle);
         }
+
+        else if(num==5){
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.main_layout,ddFragment).addToBackStack(null);
+            transaction.commit();
+
+            /* 유저 값 전달 */
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("user", u);
+            Log.d("Test","Bundle"+bundle);
+            ddFragment.setArguments(bundle);
+        }
+
+        else if(num==6){
+
+        }
+
     }
 
     /* 상세 내용 보여주기 */

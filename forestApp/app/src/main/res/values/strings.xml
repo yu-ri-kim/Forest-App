@@ -8,6 +8,7 @@
     <string name="title_dashboard">내도감</string>
     <string name="title_notifications">검색</string>
     <string name="title_hurbsearch">약초찾기</string>
+    <string name="title_mushroom">버섯구분</string>
     <string name="title_activity_tmp">tmp</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

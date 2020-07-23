@@ -21,4 +21,9 @@
         android:icon="@drawable/ic_hurb"
         android:title="@string/title_hurbsearch" />
 
+    <item
+        android:id="@+id/navigation_mushroom"
+        android:icon="@drawable/ic_mushroom_nav"
+        android:title="@string/title_mushroom" />
+
 </menu>

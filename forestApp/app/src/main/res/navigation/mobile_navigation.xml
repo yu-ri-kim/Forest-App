@@ -29,4 +29,11 @@
         android:label="@string/title_hurbsearch"
         tools:layout="@layout/fragment_hurbsearch" />
 
+    <fragment
+        android:id="@+id/navigator_mushroom"
+        android:name="com.beautifourest.forestapp.ui.mushroom.MushroomFragment"
+        android:label="@string/title_mushroom"
+        tools:layout="@layout/fragment_mushroom"/>
+
+
 </navigation>

@@ -97,6 +97,7 @@ public class MushroomFragment extends Fragment {
         });
         /* 카메라 */
 
+        getActivity().setTitle("버섯구분");
         return (View) o;
     }
 

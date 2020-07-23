@@ -42,10 +42,11 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
                 android:drawableTop="@drawable/ic_herbrecommend_resize_100"
                 android:onClick="@{()-> model.nextFragment1()}"
                 android:text="당신이 원하는 허브"
-                android:layout_marginBottom="20dp"
+
 
                 android:textColor="@android:color/background_dark"
                 fbutton:buttonColor="@color/color3"
@@ -59,16 +60,16 @@
             android:layout_height="wrap_content">
 
             <com.beautifourest.forestapp.FButton
-                android:id="@+id/mushroom"
+                android:id="@+id/delete_disease"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:text="독버섯 구분하기"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp"
-                android:drawableTop="@drawable/ic_mushroom_resize_100"
+                android:drawableTop="@drawable/ic_trash_resize_100"
+                android:onClick="@{()-> model.nextFragment4()}"
+                android:text="관심있는 질병 삭제"
                 android:textColor="@android:color/background_dark"
                 fbutton:buttonColor="@color/color2"
-                android:onClick="@{()-> model.nextFragment2()}"
                 fbutton:shadowEnabled="true" />
 
             <com.beautifourest.forestapp.FButton

@@ -57,6 +57,9 @@ public interface RetrofitInterface {
     @POST("/Disease/insertDbyID")
     Call<PostJsons> insertDisease(@Body InsertDisease insertDisease);
 
+    @POST("/Disease/deleteDisease")
+    Call<PostJsons> deleteDisease(@Body InsertDisease insertDisease);
+
     @POST("/PlantInfo/getUserHerbs")
     Call<DiseaseJsons> postGetUserHerbs(@Body UserJson user);
 
