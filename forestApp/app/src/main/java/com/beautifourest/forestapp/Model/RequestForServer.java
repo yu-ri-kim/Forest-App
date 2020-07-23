@@ -508,7 +508,7 @@ public class RequestForServer {
         }
         else if(op.equals("uploadMushroom")){
             Retrofit retrofit2 = new Retrofit.Builder()
-                    .baseUrl("http://3.22.170.191:5000")
+                    .baseUrl("http://3.129.13.221:5000")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             RetrofitInterface retrofitAPI2 = retrofit2.create(RetrofitInterface.class);
@@ -540,7 +540,7 @@ public class RequestForServer {
 
         else if(op.equals("uploadPlant")){
             Retrofit retrofit2 = new Retrofit.Builder()
-                    .baseUrl("http://3.22.170.191:5000")
+                    .baseUrl("http://3.129.13.221:5000")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             RetrofitInterface retrofitAPI2 = retrofit2.create(RetrofitInterface.class);
