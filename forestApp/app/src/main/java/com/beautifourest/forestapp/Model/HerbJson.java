@@ -41,6 +41,19 @@ public class HerbJson implements Serializable {
     @SerializedName("hrbName")
     @Expose
     private String hrbName;
+    @SerializedName("medicinal")
+    @Expose
+    private String medicinal;
+    @SerializedName("img1")
+    @Expose
+    private String img1;
+    @SerializedName("img2")
+    @Expose
+    private String img2;
+    @SerializedName("img3")
+    @Expose
+    private String img3;
+
 
     public String getMng() {
         return mng;
@@ -138,6 +151,38 @@ public class HerbJson implements Serializable {
         this.pNum = pNum;
     }
 
+    public String getMedicinal(){
+        return medicinal;
+    }
+
+    public void setMedicinal(String medicinal){
+        this.medicinal=medicinal;
+    }
+
+    public String getImg1(){
+        return img1;
+    }
+
+    public void setImg1(String img1){
+        this.img1=img1;
+    }
+
+    public String getImg2(){
+        return img2;
+    }
+
+    public void setImg2(String img2){
+        this.img2=img2;
+    }
+
+    public String getImg3(){
+        return img3;
+    }
+
+    public void setImg3(String img3){
+        this.img3=img3;
+    }
+
     @Override
     public String toString() {
         return "HerbJson{" +
@@ -152,6 +197,10 @@ public class HerbJson implements Serializable {
                 ", disease=" + disease +
                 ", hrbId=" + hrbId +
                 ", hrbName='" + hrbName + '\'' +
+                ", medicinal='" + medicinal + '\'' +
+                ", img1='" + img1 + '\'' +
+                ", img2='" + img2 + '\'' +
+                ", img3='" + img3 + '\'' +
                 '}';
     }
 }

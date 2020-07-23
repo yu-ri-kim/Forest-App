@@ -202,7 +202,4 @@ public class DeleteDiseaseViewModel extends baseViewModel {
         navigator.closeFragment();
     }
 
-    public void completeFragment(){
-        navigator.forToast("이전페이지로 돌아가세요");
-    }
 }

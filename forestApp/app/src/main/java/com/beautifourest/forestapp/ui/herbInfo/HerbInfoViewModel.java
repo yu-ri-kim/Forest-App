@@ -20,6 +20,12 @@ public class HerbInfoViewModel extends baseViewModel {
     public final ObservableField<String> herbExt=new ObservableField<>();
     public final ObservableField<String> herbmng=new ObservableField<>();
     public final ObservableField<String> herbcaution=new ObservableField<>();
+    public final ObservableField<String> disease=new ObservableField<>();
+    public List<String> list_disease=new ArrayList<>();
+    public final ObservableField<String> medicinal=new ObservableField<>();
+    public final ObservableField<String> img1=new ObservableField<>();
+    public final ObservableField<String> img2=new ObservableField<>();
+    public final ObservableField<String> img3=new ObservableField<>();
 
     public HerbInfoViewModel(HerbJson herb, CallAnotherActivityNavigator navigator){
         this.navigator=navigator;
@@ -31,6 +37,11 @@ public class HerbInfoViewModel extends baseViewModel {
         this.herbExt.set(herb.getExternal());
         this.herbmng.set(herb.getMng());
         this.herbcaution.set(herb.getCaution());
+        this.medicinal.set(herb.getMedicinal());
+        list_disease=herb.getDisease();
+        this.img1.set(herb.getImg1());
+        this.img2.set(herb.getImg2());
+        this.img3.set(herb.getImg3());
 
         /* 한국은 무조건 자라는 나라에 포함됨 */
         String tmp = "한국, ";
@@ -43,6 +54,16 @@ public class HerbInfoViewModel extends baseViewModel {
         if(old_country.size()==0) tmp = "한국";
 
         this.country.set(tmp);
+
+        String dis="";
+        for(int i=0;i<list_disease.size();i++){
+            dis+=list_disease.get(i);
+            if(i!=list_disease.size()-1){
+                dis+=", ";
+            }
+        }
+        if(list_disease.size()==0) dis="";
+        this.disease.set(dis);
     }
     @Override
     public void onCreate() {
