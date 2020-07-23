@@ -39,6 +39,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="35dp"
+                android:visibility="gone"
                 android:text="게시글 전체삭제"
                 android:padding="5dp"
                 android:onClick="@{()-> model.allDelete()}"

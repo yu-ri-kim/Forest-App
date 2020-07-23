@@ -78,8 +78,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:drawableTop="@drawable/ic_heart_resize_100"
-                android:text="준 비 중"
-
+                android:text="식물 구분하기 "
+                android:onClick="@{()-> model.nextFragment3()}"
                 android:textColor="@android:color/background_dark"
                 fbutton:buttonColor="@color/color4"
                 fbutton:shadowEnabled="true" />

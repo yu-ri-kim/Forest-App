@@ -27,6 +27,7 @@ import com.beautifourest.forestapp.ui.insertPlants.InsertPlantsDialogFragment;
 import com.beautifourest.forestapp.ui.mushroom.MushroomFragment;
 import com.beautifourest.forestapp.ui.mybook.MybookFragment;
 import com.beautifourest.forestapp.ui.mybookInfo.MybookInfoFragment;
+import com.beautifourest.forestapp.ui.plant.PlantFragment;
 import com.beautifourest.forestapp.ui.updatePlants.UpdatePlantsDialogFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -58,6 +59,9 @@ public class BookMainActivity extends AppCompatActivity implements CallAnotherAc
     HerbInfoFragment hiFragment;
     MybookInfoFragment mbiFragment;
 
+    /* 식물 감별 */
+    PlantFragment pfFragment;
+
     /* 유저 객체 */
     UserJson u;
 
@@ -85,6 +89,8 @@ public class BookMainActivity extends AppCompatActivity implements CallAnotherAc
         biFragment = new BookInfoFragment(this);
         hiFragment=new HerbInfoFragment();
         mbiFragment=new MybookInfoFragment(this);
+
+        pfFragment = new PlantFragment();
 
         /* 제일 처음 띄워줄 뷰를 세팅. commit();까지 해줘야함 */
         getSupportFragmentManager().beginTransaction().replace(R.id.main_layout,bkFragment).commitAllowingStateLoss();
@@ -141,6 +147,7 @@ public class BookMainActivity extends AppCompatActivity implements CallAnotherAc
            1 : 허브 추천 페이지
            2 : 버섯 ? 독버섯 ?!
            3 : 나만의 도감 추가하기
+           4 : 식물 찾
 ㄱ         */
 
         if(num==0){
@@ -179,6 +186,16 @@ public class BookMainActivity extends AppCompatActivity implements CallAnotherAc
             if(!idf.isAdded()) {
                 idf.show(getSupportFragmentManager(), InsertDialogFragment.TAG_EVENT_DIALOG);
             }
+        }
+        else if(num==4){
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.main_layout,pfFragment).addToBackStack(null);
+            transaction.commit();
+
+            /* 유저 값 전달 */
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("user", u);
+            pfFragment.setArguments(bundle);
         }
     }
 

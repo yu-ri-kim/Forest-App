@@ -497,9 +497,9 @@ public class RequestForServer {
 
             Log.d("camera_forest", "upload mushroom start");
 
-            retrofitAPI2.uploadMushroom(mpFile).enqueue(new Callback<PostJsons>() {
+            retrofitAPI2.uploadMushroom(mpFile).enqueue(new Callback<PostJsonsForResult>() {
                 @Override
-                public void onResponse(Call<PostJsons> call, Response<PostJsons> response) {
+                public void onResponse(Call<PostJsonsForResult> call, Response<PostJsonsForResult> response) {
                     if (response.isSuccessful()) {
                         Log.d("camera_forest", "upload mushroom successful");
 
@@ -512,8 +512,40 @@ public class RequestForServer {
                 }
 
                 @Override
-                public void onFailure(Call<PostJsons> call, Throwable t) {
+                public void onFailure(Call<PostJsonsForResult> call, Throwable t) {
                     Log.d("camera_forest", "upload mushroom error");
+
+                    callback.onError(t);
+                }
+            });
+        }
+
+        else if(op.equals("uploadPlant")){
+            Retrofit retrofit2 = new Retrofit.Builder()
+                    .baseUrl("http://3.22.170.191:5000")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            RetrofitInterface retrofitAPI2 = retrofit2.create(RetrofitInterface.class);
+
+            Log.d("camera_forest", "upload plant start");
+
+            retrofitAPI2.uploadPlant(mpFile).enqueue(new Callback<PostJsonsForResult>() {
+                @Override
+                public void onResponse(Call<PostJsonsForResult> call, Response<PostJsonsForResult> response) {
+                    if (response.isSuccessful()) {
+                        Log.d("camera_forest", "upload plant successful");
+
+                        callback.onSuccess(response.code(), response.body());
+                    } else {
+                        Log.d("camera_forest", "rupload plant failure");
+                        Log.d("camera_forest", "rupload plant failure");
+                        callback.onFailure(response.code());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<PostJsonsForResult> call, Throwable t) {
+                    Log.d("camera_forest", "upload plant error");
 
                     callback.onError(t);
                 }

@@ -99,4 +99,9 @@ public class HurbSearchViewModel extends baseViewModel {
         Log.d("Test","nextFragment2");
         navigator.callFragment(user,2, null);
     }
+
+    public void nextFragment3() {
+        Log.d("Test","nextFragment2");
+        navigator.callFragment(user,4, null);
+    }
 }

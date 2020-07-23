@@ -70,7 +70,11 @@ public interface RetrofitInterface {
 
     @Multipart
     @POST("/poisonresult")
-    Call<PostJsons> uploadMushroom(@Part MultipartBody.Part file);
+    Call<PostJsonsForResult> uploadMushroom(@Part MultipartBody.Part file);
+
+    @Multipart
+    @POST("/herbresult")
+    Call<PostJsonsForResult> uploadPlant(@Part MultipartBody.Part file);
 
     @HTTP(method = "DELETE", path = "/TempPlants/deleteallTempPlants", hasBody = true)
     Call<PostJsons> deleteAllPlants(@Body UserJson user);
