@@ -424,6 +424,42 @@ public class RequestForServer {
             });
         }
 
+        else if(op.equals("writeComment")){  // 댓글 쓰기
+            retrofitAPI.writeComment((Comment) ob).enqueue(new Callback<PostJsons>() {
+                @Override
+                public void onResponse(Call<PostJsons> call, Response<PostJsons> response) {
+                    if (response.isSuccessful()) {
+                        callback.onSuccess(response.code(), response.body());
+                    } else {
+                        callback.onFailure(response.code());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<PostJsons> call, Throwable t) {
+                    callback.onError(t);
+                }
+            });
+        }
+
+        else if(op.equals("getAllComment")){  // 댓글 가져오기
+            retrofitAPI.getAllComment((MyplantsJson) ob).enqueue(new Callback<Comments>() {
+                @Override
+                public void onResponse(Call<Comments> call, Response<Comments> response) {
+                    if (response.isSuccessful()) {
+                        callback.onSuccess(response.code(), response.body());
+                    } else {
+                        callback.onFailure(response.code());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<Comments> call, Throwable t) {
+                    callback.onError(t);
+                }
+            });
+        }
+
     }
 
     public void exec_photo(final RetroCallback callback){
@@ -454,7 +490,7 @@ public class RequestForServer {
         }
         else if(op.equals("uploadMushroom")){
             Retrofit retrofit2 = new Retrofit.Builder()
-                    .baseUrl("http://3.21.164.126:5000")
+                    .baseUrl("http://3.22.170.191:5000")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             RetrofitInterface retrofitAPI2 = retrofit2.create(RetrofitInterface.class);

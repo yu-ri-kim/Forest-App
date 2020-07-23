@@ -8,10 +8,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ObservableArrayList;
 import androidx.fragment.app.Fragment;
 
 import com.beautifourest.forestapp.CallAnotherActivityNavigator;
@@ -19,12 +23,17 @@ import com.beautifourest.forestapp.Model.MyplantsJson;
 import com.beautifourest.forestapp.Model.UserJson;
 import com.beautifourest.forestapp.R;
 import com.beautifourest.forestapp.databinding.FragmentMybookinfoBinding;
+import com.beautifourest.forestapp.ui.mybook.MbViewModel;
+import com.beautifourest.forestapp.ui.mybook.MybookAdapter;
 
 public class MybookInfoFragment extends Fragment {
     MybookInfoViewModel model;
     private CallAnotherActivityNavigator navigator;
 
     Activity activity;
+    static CommentAdapter adapter = new CommentAdapter();
+
+
     public MybookInfoFragment(){
 
     }
@@ -77,5 +86,16 @@ public class MybookInfoFragment extends Fragment {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @BindingAdapter("app:items")
+    public static void setUserList(ListView listView, ObservableArrayList<CommentViewModel> comments) {
+        if(listView.getAdapter() == null) {
+            listView.setAdapter(adapter);
+        }
+        else {
+            adapter = (CommentAdapter) listView.getAdapter();
+        }
+        adapter.addAll(comments);
     }
 }

@@ -92,4 +92,10 @@ public interface RetrofitInterface {
 
     @GET("/TempPlants/getALLTempPlants")
     Call<MyplantsJsons> getAllTempPlants();
+
+    @POST("/TempPlants/Comment")
+    Call<PostJsons> writeComment(@Body Comment info);
+
+    @POST("/TempPlants/getComments")
+    Call<Comments> getAllComment(@Body MyplantsJson info);
 }

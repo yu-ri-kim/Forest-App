@@ -202,12 +202,13 @@
                 android:text="댓글">
             </TextView>
 
-            <ListView
+            <com.beautifourest.forestapp.Model.MyListView
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_width="match_parent"
+                app:items="@{model.comments}"
                 android:layout_height="wrap_content">
-            </ListView>
+            </com.beautifourest.forestapp.Model.MyListView>
 
             <LinearLayout
                 android:layout_margin="30dp"
@@ -223,6 +224,7 @@
                     android:padding="10dp"
                     android:scrollbars="vertical"
                     android:layout_marginBottom="10dp"
+                    android:text="@={model.detail}"
                     android:inputType="textMultiLine" />
 
                 <com.beautifourest.forestapp.FButton
@@ -230,6 +232,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:padding="10dp"
+                    android:onClick="@{()-> model.writeComment()}"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/white"
                     fbutton:buttonColor="@color/fbutton_color_green_sea"
