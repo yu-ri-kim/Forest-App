@@ -62,7 +62,6 @@ public class HerbInfoViewModel extends baseViewModel {
                 dis+=", ";
             }
         }
-        if(list_disease.size()==0) dis="";
         this.disease.set(dis);
     }
     @Override

@@ -147,9 +147,6 @@ public class BooksViewModel extends baseViewModel {
             public void onSuccess(int code, Object receivedData) {
                 List<PlantJson> data=(List<PlantJson>)receivedData;
 
-                plants.clear();
-                Log.d("initTest", plants.size()+"");
-
                 /* 모든 도감 데이터 넣기 */
                 for(PlantJson d:data){
                     String img=d.getFsImg1();
@@ -159,14 +156,8 @@ public class BooksViewModel extends baseViewModel {
                     plants.add(new BookViewModel(null,img,name));
                 }
 
-                Log.d("initTest", data.size()+"");
-
                 Collections.sort(initplants); // 이름순 정렬
                 Collections.sort(plants); // 이름순 정렬
-
-                Log.d("initTest", plants.get(0).name.get());
-                Log.d("initTest", plants.get(1).name.get());
-                Log.d("initTest", plants.size()+"");
 
             }
 
@@ -181,7 +172,6 @@ public class BooksViewModel extends baseViewModel {
     private void getInitList2(){
         if(initherbs.size()!=0) return;
         plants.clear();
-
         /* 실행할 명령어와 서버로 보낼 객체 설정 */
         requestForServer.setOp("AllHerb");
 
@@ -206,8 +196,8 @@ public class BooksViewModel extends baseViewModel {
                     plants.add(new BookViewModel(hrbId,img,name));
 
                 }
-                Collections.sort(initherbs); // 이름순 정렬
-                Collections.sort(plants); // 이름순 정렬
+                //Collections.sort(initherbs); // 이름순 정렬
+                //Collections.sort(plants); // 이름순 정렬
             }
 
             @Override

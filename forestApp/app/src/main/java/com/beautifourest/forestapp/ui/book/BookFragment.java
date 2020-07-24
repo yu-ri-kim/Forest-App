@@ -48,6 +48,8 @@ public class BookFragment extends Fragment {
         model.onCreate();
     }
 
+
+
     @BindingAdapter("app:items")
     public static void setUserList(GridView gridView, ObservableArrayList<BookViewModel> plants){
         if(gridView.getAdapter()==null){

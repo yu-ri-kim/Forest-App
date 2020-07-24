@@ -105,4 +105,7 @@ public interface RetrofitInterface {
 
     @POST("/TempPlants/getComments")
     Call<Comments> getAllComment(@Body MyplantsJson info);
+
+    @GET("/naverapi?search=")
+    Call<Navers> getNaverapi();
 }

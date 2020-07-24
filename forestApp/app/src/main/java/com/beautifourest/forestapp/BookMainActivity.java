@@ -262,8 +262,6 @@ public class BookMainActivity extends AppCompatActivity implements CallAnotherAc
     @Override
     public void callFragmentForInfo(int num, HerbJson herb_info) {
         if(num==0){
-            Log.d("Test","Check herb fragment");
-            Log.d("Test","herb info: "+herb_info.toString());
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.main_layout,hiFragment).addToBackStack(null);
             transaction.commit();

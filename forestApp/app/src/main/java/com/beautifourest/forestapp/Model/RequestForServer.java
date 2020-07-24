@@ -593,5 +593,30 @@ public class RequestForServer {
             });
         }
 
+        else if(op.equals("naverApi")){
+            Retrofit retrofit2 = new Retrofit.Builder()
+                    .baseUrl("http://3.129.13.221:5000")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            RetrofitInterface retrofitAPI2 = retrofit2.create(RetrofitInterface.class);
+
+            retrofitAPI2.getNaverapi().enqueue(new Callback<Navers>() {
+                @Override
+                public void onResponse(Call<Navers> call, Response<Navers> response) {
+                    if(response.isSuccessful()){
+                        callback.onSuccess(response.code(),response.body());
+                    } else{
+                        callback.onFailure(response.code());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<Navers> call, Throwable t) {
+                    callback.onError(t);
+                }
+            });
+
+        }
+
     }
 }

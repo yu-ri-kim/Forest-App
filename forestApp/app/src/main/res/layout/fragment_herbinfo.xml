@@ -11,261 +11,265 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:fillViewport="true">
-    <LinearLayout
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:layout_gravity="center"
-                android:text="@{model.name}"
-                />
-
-            <ImageView
-                android:id="@+id/plantimg"
-                android:layout_width="150dp"
-                android:layout_marginTop="10dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                app:imageURL="@{model.img}" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:stretchMode="columnWidth"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="left">
+                android:layout_gravity="center"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/ename"
-                    android:layout_width="80dp"
-                    android:layout_height="24dp"
-                    android:text="원산지" />
-
-                <TextView
-                    android:layout_width="270dp"
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{model.country}" />
+                    android:textSize="20dp"
+                    android:layout_gravity="center"
+                    android:text="@{model.name}"
+                    />
+
+                <ImageView
+                    android:id="@+id/plantimg"
+                    android:layout_width="150dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    app:imageURL="@{model.img}" />
 
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="left">
-
-                <TextView
-                    android:id="@+id/mname"
-                    android:layout_width="80dp"
-                    android:layout_height="24dp"
-                    android:text="약재이름" />
-
-                <TextView
-                    android:layout_width="270dp"
-                    android:layout_height="wrap_content"
-                    android:text="@{model.medicinal}" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="left">
-
-                <TextView
-                    android:id="@+id/lifetime"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
-                    android:text="내용" />
-
-                <TextView
-                    android:maxLines = "3"
-                    android:isScrollContainer="true"
-                    android:layout_width="270dp"
-                    android:layout_height="wrap_content"
-                    android:text="@{model.herbInt}" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="left">
-
-                <TextView
-                    android:id="@+id/season"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
-                    android:text="외용" />
-
-                <TextView
-                    android:layout_width="270dp"
-                    android:layout_height="wrap_content"
-                    android:text="@{model.herbExt}" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="left">
-
-                <TextView
-                    android:id="@+id/gbn"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
-                    android:text="관리법" />
-
-                <TextView
-                    android:layout_width="270dp"
-                    android:layout_height="wrap_content"
-                    android:text="@{model.herbmng}" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="left">
-
-                <TextView
-                    android:id="@+id/dname"
-                    android:layout_width="80dp"
-                    android:layout_height="24dp"
-                    android:text="효과질병" />
-
-                <TextView
-                    android:layout_width="270dp"
-                    android:layout_height="wrap_content"
-                    android:text="@{model.disease}" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="left">
-
-                <TextView
-                    android:id="@+id/classname"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
-                    android:text="주의사항" />
-
-                <TextView
-                    android:layout_width="270dp"
-                    android:layout_height="wrap_content"
-                    android:text="@{model.herbcaution}" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
                 android:stretchMode="columnWidth"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/img1"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        app:imageURL="@{model.img1}" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left">
 
                     <TextView
-                        android:id="@+id/img_1"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/ename"
+                        android:layout_width="80dp"
+                        android:layout_height="24dp"
+                        android:text="원산지" />
+
+                    <TextView
+                        android:layout_width="270dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:textSize="10dp"
-                        android:layout_gravity="center"
-                        android:text="약용식물전경이미지" />
+                        android:text="@{model.country}" />
+
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="30dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/img2"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        app:imageURL="@{model.img2}" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left">
 
                     <TextView
-                        android:id="@+id/img_2"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/mname"
+                        android:layout_width="80dp"
+                        android:layout_height="24dp"
+                        android:text="약재이름" />
+
+                    <TextView
+                        android:layout_width="270dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:textSize="10dp"
-                        android:layout_gravity="center"
-                        android:text="약용식물부위이미지" />
+                        android:text="@{model.medicinal}" />
+
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="30dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/img3"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        app:imageURL="@{model.img3}" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left">
 
                     <TextView
-                        android:id="@+id/img_3"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/lifetime"
+                        android:layout_width="80dp"
+                        android:layout_height="50dp"
+                        android:text="내용" />
+
+                    <TextView
+                        android:maxLines = "3"
+                        android:isScrollContainer="true"
+                        android:layout_width="270dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:textSize="10dp"
-                        android:layout_gravity="center"
-                        android:text="약용식물이미지" />
+                        android:text="@{model.herbInt}" />
+
+
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left">
+
+                    <TextView
+                        android:id="@+id/season"
+                        android:layout_width="80dp"
+                        android:layout_height="50dp"
+                        android:text="외용" />
+
+                    <TextView
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{model.herbExt}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left">
+
+                    <TextView
+                        android:id="@+id/gbn"
+                        android:layout_width="80dp"
+                        android:layout_height="50dp"
+                        android:text="관리법" />
+
+                    <TextView
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{model.herbmng}" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left">
+
+                    <TextView
+                        android:id="@+id/dname"
+                        android:layout_width="80dp"
+                        android:layout_height="24dp"
+                        android:text="효과질병" />
+
+                    <TextView
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{model.disease}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left">
+
+                    <TextView
+                        android:id="@+id/classname"
+                        android:layout_width="80dp"
+                        android:layout_height="50dp"
+                        android:text="주의사항" />
+
+                    <TextView
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{model.herbcaution}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:stretchMode="columnWidth"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/img1"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            app:imageURL="@{model.img1}" />
+
+                        <TextView
+                            android:id="@+id/img_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textSize="12dp"
+                            android:layout_gravity="center"
+                            android:text="약용식물전경이미지" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/img2"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            app:imageURL="@{model.img2}" />
+
+                        <TextView
+                            android:id="@+id/img_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textSize="12dp"
+                            android:layout_gravity="center"
+                            android:text="약용식물부위이미지" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginBottom="50dp"
+
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/img3"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            app:imageURL="@{model.img3}" />
+
+                        <TextView
+                            android:id="@+id/img_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textSize="12dp"
+                            android:layout_gravity="center"
+                            android:text="약용식물이미지" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
-
         </LinearLayout>
-
-    </LinearLayout>
     </ScrollView>
 </layout>
-
