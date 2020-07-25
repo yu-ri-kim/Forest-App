@@ -85,7 +85,7 @@ public class InsertPlantsDialogFragment extends DialogFragment implements CallAn
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         o = DataBindingUtil.inflate(inflater, R.layout.fragment_insertbookdialog, container, false).getRoot();
-        model = new InsertPlantsDialogViewModel(user,this); // 유저랑 병명 정보 리스트 주기
+        model = new InsertPlantsDialogViewModel(user,this,getContext()); // 유저랑 병명 정보 리스트 주기
 
         /* 카메라 */
         tedPermission(); // 권한 설정

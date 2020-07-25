@@ -1,6 +1,9 @@
 package com.beautifourest.forestapp.ui.insertPlants;
 
+import android.content.Context;
 import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Build;
 import android.util.Log;
 import android.widget.RadioGroup;
 
@@ -18,6 +21,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +37,7 @@ public class InsertPlantsDialogViewModel extends baseViewModel {
     private Map<String, RequestBody> rqMap;
     Bitmap originalBm;
     String filePath="";
-
+    Context context;
     //binding하고 있는 값들
     public final ObservableField<String> fskname = new ObservableField<>();
     public final ObservableField<String> fsename = new ObservableField<>();
@@ -48,9 +52,10 @@ public class InsertPlantsDialogViewModel extends baseViewModel {
     private CallAnotherActivityNavigator navigator; // 화면 전환
 
     public InsertPlantsDialogViewModel() { }
-    public InsertPlantsDialogViewModel(UserJson user, CallAnotherActivityNavigator navigator) {
+    public InsertPlantsDialogViewModel(UserJson user, CallAnotherActivityNavigator navigator, Context context) {
         this.user = user;
         this.navigator= navigator;
+        this.context=context;
     }
 
     public UserJson getUser() {
@@ -141,8 +146,15 @@ public class InsertPlantsDialogViewModel extends baseViewModel {
         Log.d("camera_forest", "bitmaap viewmodel : " + originalBm);
 
         if (filePath != null) {
-            File file = new File(filePath);
             try {
+            File file;// = new File(filePath);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {//android 10 이상인 경우
+                String extension = filePath.substring(filePath.lastIndexOf("."));
+                Log.d("",context.getFilesDir().getPath());
+                file = new File(context.getFilesDir(), "localImgFile"+extension);//내부저장소에서 가져오기
+            }else {
+                file = new File(filePath);
+            }
                 OutputStream os = new BufferedOutputStream(new FileOutputStream(file));
                 originalBm.compress(Bitmap.CompressFormat.JPEG, 80, os);
                 os.close();
