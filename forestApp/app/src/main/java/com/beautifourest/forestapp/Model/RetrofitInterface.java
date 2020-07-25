@@ -105,4 +105,7 @@ public interface RetrofitInterface {
 
     @GET("/naverapi")
     Call<SearchResult> getSearchResult(@Query("search")String query);
+
+    @POST("/Disease/deleteDisease")
+    Call<PostJsons> deleteDisease(@Body InsertDisease insertDisease);
 }

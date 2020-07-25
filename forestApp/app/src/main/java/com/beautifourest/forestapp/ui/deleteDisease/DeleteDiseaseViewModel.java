@@ -164,15 +164,14 @@ public class DeleteDiseaseViewModel extends baseViewModel {
     }
 
     public void delete(){   //삭제
+        Log.d("Test","Delete");
         requestForServer.setOp("DeleteDisease"); // 실행할 명령 지정
         //DeleteDisease ob=new DeleteDisease();
         InsertDisease ob=new InsertDisease();
         ob.setUid(user.getUid());
         ob.setDname(dname);
-        Log.d("Test",ob.getUid());
-        Log.d("Test",ob.getDname());
 
-        requestForServer.setOb((InsertDisease)ob);
+        requestForServer.setOb((Object) ob);
         requestForServer.exec(new RetroCallback() { // 통신 시작
             @Override
             public void onError(Throwable t) {
@@ -185,7 +184,9 @@ public class DeleteDiseaseViewModel extends baseViewModel {
                 if(data.getStatus().equals(("OK"))){
                     Log.d("Test","Success");
                     navigator.forToast(dname+" 이(가) 삭제되었습니다.\n 이전 페이지로 돌아가세요");
-
+                }
+                else{
+                    Log.d("Test","gggg");
                 }
             }
 

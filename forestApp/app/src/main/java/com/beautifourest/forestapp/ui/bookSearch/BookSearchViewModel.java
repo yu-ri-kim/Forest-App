@@ -55,10 +55,6 @@ public class BookSearchViewModel extends baseViewModel{
                 getInfoByName();
             }
         });
-
-        getInitList();
-        getInitList_Disease();
-
         search.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallback() {
             @Override
             public void onPropertyChanged(Observable observable, int i) {
@@ -91,16 +87,10 @@ public class BookSearchViewModel extends baseViewModel{
         this.position=position;
 
         if(position==0) {
-            plants.clear();
-            for(BkViewModel m : initplants){
-                plants.add(m);
-            }
+            getInitList();
         }
         if(position==1) {
-            plants.clear();
-            for(BkViewModel m : initdisease){
-                plants.add(m);
-            }
+            getInitList_Disease();
         }
     }
 
@@ -129,8 +119,6 @@ public class BookSearchViewModel extends baseViewModel{
     }
 
     private void getInitList(){
-        if(initplants.size()!=0) return;
-
         /* 실행할 명령어와 서버로 보낼 객체 설정 */
         requestForServer.setOp("AllPlantInfo");
 
@@ -144,6 +132,8 @@ public class BookSearchViewModel extends baseViewModel{
             @Override
             public void onSuccess(int code, Object receivedData) {
                 List<PlantJson> data = (List<PlantJson>)receivedData;
+                plants.clear();
+                initplants.clear();
 
                 /* 모든 도감 데이터를 add 한다 */
                 for(PlantJson d: data){
@@ -162,8 +152,6 @@ public class BookSearchViewModel extends baseViewModel{
     }
 
     private void getInitList_Disease(){
-        if(initdisease.size()!=0) return;
-
         /* 실행할 명령어와 서버로 보낼 객체 설정 */
         requestForServer.setOp("GetDisesaseInfo");
 
@@ -177,12 +165,15 @@ public class BookSearchViewModel extends baseViewModel{
             @Override
             public void onSuccess(int code, Object receivedData) {
                 List<DiseaseJson> data = (List<DiseaseJson>)receivedData;
+                plants.clear();
+                initdisease.clear();
 
                 /* 모든 도감 데이터를 add 한다 */
                 for(DiseaseJson d: data){
                     String img=d.getFsImg1();
                     String info=d.getDname();
                     initdisease.add(new BkViewModel(img, d.getHrbName(),info));
+                    plants.add(new BkViewModel(img, d.getHrbName(),info));
                 }
             }
 

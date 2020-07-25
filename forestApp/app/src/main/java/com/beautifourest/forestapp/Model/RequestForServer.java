@@ -418,6 +418,24 @@ public class RequestForServer {
             });
         }
 
+        else if(op.equals("DeleteDisease")){ //관심있는 질병 삭제
+            retrofitAPI.deleteDisease((InsertDisease)ob).enqueue(new Callback<PostJsons>() {
+                @Override
+                public void onResponse(Call<PostJsons> call, Response<PostJsons> response) {
+                    if (response.isSuccessful()) {
+                        callback.onSuccess(response.code(), response.body());
+                    } else {
+                        callback.onFailure(response.code());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<PostJsons> call, Throwable t) {
+                    callback.onError(t);
+                }
+            });
+        }
+
         else if(op.equals("getOnePlant")){  //temp plant 중 한 개 가져오기
             retrofitAPI.getOnePlants((MyplantsJson)ob).enqueue(new Callback<MyplantsJsons>() {
                 @Override
