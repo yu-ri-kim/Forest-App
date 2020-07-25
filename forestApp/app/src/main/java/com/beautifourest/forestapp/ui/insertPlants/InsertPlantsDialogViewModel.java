@@ -2,7 +2,6 @@ package com.beautifourest.forestapp.ui.insertPlants;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
 import android.widget.RadioGroup;
@@ -157,8 +156,8 @@ public class InsertPlantsDialogViewModel extends baseViewModel {
             }
                 OutputStream os = new BufferedOutputStream(new FileOutputStream(file));
                 originalBm.compress(Bitmap.CompressFormat.JPEG, 80, os);
+                originalBm=ExifUtils.rotateBitmap(filePath,originalBm);
                 os.close();
-
                 RequestBody rqFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
                 mpFile = MultipartBody.Part.createFormData("file", file.getName(), rqFile); // 키값, 파일 이름, 데이터
 

@@ -3,14 +3,10 @@ package com.beautifourest.forestapp.ui.insertPlants;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
-import android.media.ExifInterface;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -274,6 +270,7 @@ public class InsertPlantsDialogFragment extends DialogFragment implements CallAn
 
         BitmapFactory.Options options = new BitmapFactory.Options();
         Bitmap originalBm = BitmapFactory.decodeFile(tempFile.getAbsolutePath(), options);
+        originalBm=ExifUtils.rotateBitmap(tempFile.getAbsolutePath(),originalBm);
         Log.d(TAG, "setImage : " + tempFile.getAbsolutePath());
 
         imageView.setImageBitmap(originalBm); // 비트맵으로 변환된 사진을 set 한다.
@@ -329,6 +326,7 @@ public class InsertPlantsDialogFragment extends DialogFragment implements CallAn
     @Override
     public void closeFragment() {
         dismiss();
+
     }
 
     @Override
