@@ -22,6 +22,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -147,17 +148,14 @@ public class InsertPlantsDialogViewModel extends baseViewModel {
         if (filePath != null) {
             try {
             File file;// = new File(filePath);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {//android 10 이상인 경우
                 String extension = filePath.substring(filePath.lastIndexOf("."));
                 Log.d("",context.getFilesDir().getPath());
                 file = new File(context.getFilesDir(), "localImgFile"+extension);//내부저장소에서 가져오기
-            }else {
-                file = new File(filePath);
-            }
                 OutputStream os = new BufferedOutputStream(new FileOutputStream(file));
                 originalBm.compress(Bitmap.CompressFormat.JPEG, 80, os);
                 originalBm=ExifUtils.rotateBitmap(filePath,originalBm);
                 os.close();
+                URLEncoder.encode(file.getName(), "utf-8");
                 RequestBody rqFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
                 mpFile = MultipartBody.Part.createFormData("file", file.getName(), rqFile); // 키값, 파일 이름, 데이터
 
