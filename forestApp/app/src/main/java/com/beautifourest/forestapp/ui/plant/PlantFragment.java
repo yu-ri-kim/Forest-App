@@ -29,6 +29,7 @@ import com.beautifourest.forestapp.Model.UserJson;
 import com.beautifourest.forestapp.R;
 import com.beautifourest.forestapp.databinding.FragmentMushroomBinding;
 import com.beautifourest.forestapp.databinding.FragmentPlantBinding;
+import com.beautifourest.forestapp.ui.insertPlants.ExifUtils;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 import com.squareup.otto.Subscribe;
@@ -280,7 +281,7 @@ public class PlantFragment extends Fragment {
 
         BitmapFactory.Options options = new BitmapFactory.Options();
         Bitmap originalBm = BitmapFactory.decodeFile(tempFile.getAbsolutePath(), options);
-
+        originalBm= ExifUtils.rotateBitmap(tempFile.getAbsolutePath(),originalBm);
         Log.d(TAG, "setImage : " + tempFile.getAbsolutePath());
 
         imageView.setImageBitmap(originalBm);

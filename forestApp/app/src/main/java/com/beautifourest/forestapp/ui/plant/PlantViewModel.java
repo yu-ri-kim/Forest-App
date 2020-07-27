@@ -12,6 +12,7 @@ import com.beautifourest.forestapp.Model.RequestForServer;
 import com.beautifourest.forestapp.Model.RetroCallback;
 import com.beautifourest.forestapp.Model.UserJson;
 import com.beautifourest.forestapp.baseViewModel;
+import com.beautifourest.forestapp.ui.insertPlants.ExifUtils;
 import com.victor.loading.rotate.RotateLoading;
 
 import java.io.BufferedOutputStream;
@@ -118,6 +119,7 @@ public class PlantViewModel extends baseViewModel {
             try {
                 OutputStream os = new BufferedOutputStream(new FileOutputStream(file));
                 originalBm.compress(Bitmap.CompressFormat.JPEG, 70, os);
+                originalBm= ExifUtils.rotateBitmap(filePath,originalBm);
                 os.close();
 
                 RequestBody rqFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
