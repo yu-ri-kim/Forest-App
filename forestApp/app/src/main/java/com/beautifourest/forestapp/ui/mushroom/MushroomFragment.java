@@ -72,7 +72,7 @@ public class MushroomFragment extends Fragment {
         Bundle bundle= getArguments();
         UserJson user = (UserJson) bundle.getSerializable("user");
         Log.d("Test","fragment Mushroom user: "+user.toString());
-        model = new MushroomViewModel(user);
+        model = new MushroomViewModel(user,getContext());
 
         /* 카메라 */
         tedPermission(); // 권한 설정

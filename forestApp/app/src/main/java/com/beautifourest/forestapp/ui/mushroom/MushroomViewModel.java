@@ -21,6 +21,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.URLEncoder;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -42,9 +43,10 @@ public class MushroomViewModel extends baseViewModel {
     Bitmap originalBm;
     String filePath="";
 
-    public MushroomViewModel(UserJson user) {
+    public MushroomViewModel(UserJson user,Context context) {
         this.user = user;
         this.mushroom_result.set("궁금한 버섯 사진을 등록해주세요");
+        this.context=context;
     }
 
     public Bitmap getOriginalBm() {
@@ -112,12 +114,15 @@ public class MushroomViewModel extends baseViewModel {
         Log.d("camera_forest", "mushroom bitmaap viewmodel : " + originalBm);
 
         if (filePath != null) {
-            File file = new File(filePath);
+            String extension = filePath.substring(filePath.lastIndexOf("."));
+            Log.d("",context.getFilesDir().getPath());
+            File file = new File(context.getFilesDir(), "localImgFile"+extension);//내부저장소에서 가져오기
+            //File file = new File(filePath);//filePath);
             try {
                 OutputStream os = new BufferedOutputStream(new FileOutputStream(file));
                 originalBm.compress(Bitmap.CompressFormat.JPEG, 70, os);
                 os.close();
-
+                URLEncoder.encode(file.getName(), "utf-8");
                 RequestBody rqFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
                 mpFile = MultipartBody.Part.createFormData("img", file.getName(), rqFile); // 키값, 파일 이름, 데이터
 

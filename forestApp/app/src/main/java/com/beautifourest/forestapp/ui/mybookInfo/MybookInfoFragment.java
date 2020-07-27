@@ -17,6 +17,7 @@ import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ObservableArrayList;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.beautifourest.forestapp.CallAnotherActivityNavigator;
 import com.beautifourest.forestapp.Model.MyplantsJson;

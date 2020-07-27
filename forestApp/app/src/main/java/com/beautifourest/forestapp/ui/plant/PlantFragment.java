@@ -73,7 +73,7 @@ public class PlantFragment extends Fragment {
         Bundle bundle= getArguments();
         UserJson user = (UserJson) bundle.getSerializable("user");
         Log.d("Test","fragment plant user: "+user.toString());
-        model = new PlantViewModel(user);
+        model = new PlantViewModel(user,getContext());
 
         /* 카메라 */
         tedPermission(); // 권한 설정
