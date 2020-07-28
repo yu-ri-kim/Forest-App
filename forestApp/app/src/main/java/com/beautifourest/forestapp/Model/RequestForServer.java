@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /* 서버 통신 클래스 */
 public class RequestForServer {
-    final private String SERVER_URL = "http://3.129.13.221:5000";
+    final private String SERVER_URL = "http://3.134.112.39:5000";
 
     private String op="";
     private Object ob;
@@ -562,7 +562,7 @@ public class RequestForServer {
         }
         else if(op.equals("uploadMushroom")){
             Retrofit retrofit2 = new Retrofit.Builder()
-                    .baseUrl("http://3.129.13.221:5000")
+                    .baseUrl(SERVER_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             RetrofitInterface retrofitAPI2 = retrofit2.create(RetrofitInterface.class);
@@ -594,7 +594,7 @@ public class RequestForServer {
 
         else if(op.equals("uploadPlant")){
             Retrofit retrofit2 = new Retrofit.Builder()
-                    .baseUrl("http://3.129.13.221:5000")
+                    .baseUrl(SERVER_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             RetrofitInterface retrofitAPI2 = retrofit2.create(RetrofitInterface.class);
